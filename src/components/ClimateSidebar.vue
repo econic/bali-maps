@@ -233,10 +233,10 @@ const legendBackground = computed(() => {
 </script>
 
 <template>
-  <!-- Sidebar Container -->
+  <!-- Sidebar Container (Absolute Overlay Panel) -->
   <div 
-    class="relative h-full flex flex-col transition-all duration-300 ease-out z-[1000] border-r border-slate-900 shrink-0 bg-[#070a13] text-slate-200"
-    :class="[sidebarOpen ? 'w-[420px]' : 'w-0 overflow-hidden border-r-0']"
+    class="absolute top-0 left-0 h-full flex flex-col transition-transform duration-300 ease-out z-[1000] border-r border-slate-900 shrink-0 bg-[#070a13]/98 backdrop-blur-md text-slate-200 w-full sm:w-[420px]"
+    :class="[sidebarOpen ? 'translate-x-0' : '-translate-x-full border-r-0']"
   >
     <!-- Toggle Collapse Button on Sidebar (Inside sidebar itself when open) -->
     <button 

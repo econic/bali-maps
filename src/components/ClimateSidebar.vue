@@ -223,6 +223,13 @@ const legendData = computed(() => {
       }
   }
 })
+
+// Calculate smooth CSS linear-gradient background from color stops
+const legendBackground = computed(() => {
+  if (!legendData.value) return ''
+  const colors = legendData.value.stops.map(s => s.color).join(', ')
+  return `linear-gradient(to right, ${colors})`
+})
 </script>
 
 <template>
@@ -362,13 +369,10 @@ const legendData = computed(() => {
           </div>
           <div class="space-y-2.5">
             <!-- Smooth continuous flex color strip -->
-            <div class="flex h-2 w-full rounded-full overflow-hidden border border-slate-950/80 shadow shadow-black/80">
-              <div 
-                v-for="stop in legendData.stops" 
-                :key="stop.label"
-                :style="{ backgroundColor: stop.color, flex: 1 }"
-              ></div>
-            </div>
+            <div 
+              class="h-2 w-full rounded-full border border-slate-950/80 shadow shadow-black/80"
+              :style="{ background: legendBackground }"
+            ></div>
             <!-- Dynamic stop markers and labels -->
             <div class="grid grid-cols-6 gap-0.5 text-[8.5px] text-slate-400/90 font-bold font-mono leading-none">
               <div 

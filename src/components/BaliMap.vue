@@ -4,6 +4,8 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import weatherData from '../data/bali-weather-data.json'
 
+import { getColorForMetric } from '../utils/climateColors'
+
 // Custom interface for our weather record
 interface WeatherRecord {
   lat: number
@@ -41,47 +43,9 @@ const tileProviders = {
   terrain: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'
 }
 
-// Helper: Get color based on value and selected metric
+// Helper: Get color based on value and selected metric (using continuous gradient)
 function getColor(metric: string, val: number): string {
-  if (metric === 'rain_prop') {
-    // Noticeable Rain Proportion: 2.5% to 6.5%
-    if (val < 3.0) return '#a3e635' // lime-400 (very dry)
-    if (val < 4.0) return '#34d399' // emerald-400
-    if (val < 4.8) return '#22d3ee' // cyan-400
-    if (val < 5.5) return '#3b82f6' // blue-500
-    if (val < 6.0) return '#4f46e5' // indigo-600
-    return '#8b5cf6' // violet-500 (very wet)
-  } else if (metric === 'annual_rainfall') {
-    // Annual Rainfall: 950mm to 4200mm
-    if (val < 1200) return '#f97316' // orange-500 (dry)
-    if (val < 1600) return '#fbbf24' // amber-400
-    if (val < 2200) return '#10b981' // emerald-500
-    if (val < 2800) return '#06b6d4' // cyan-500
-    if (val < 3500) return '#2563eb' // blue-600
-    return '#7c3aed' // violet-600 (rainforests)
-  } else if (metric === 'avg_temp') {
-    // Temperature: 19°C (mountain) to 27.2°C (coast)
-    if (val < 20.5) return '#818cf8' // indigo-400 (cool mountain)
-    if (val < 22.5) return '#22d3ee' // cyan-400
-    if (val < 24.5) return '#34d399' // emerald-400
-    if (val < 26.0) return '#fb923c' // orange-400
-    return '#ef4444' // red-500 (warm coast)
-  } else if (metric === 'sun_hours') {
-    // Daily Sun Hours: 4.5h to 7.8h
-    if (val < 5.0) return '#4b5563' // gray-600 (cloudy mountain)
-    if (val < 6.0) return '#818cf8' // indigo-400
-    if (val < 6.8) return '#a3e635' // lime-400
-    if (val < 7.4) return '#facc15' // yellow-400
-    return '#f97316' // orange-500 (sun-drenched coast)
-  } else if (metric === 'wind_speed') {
-    // Max Wind Speed: 8 km/h to 24 km/h
-    if (val < 11.0) return '#10b981' // emerald-500 (calm)
-    if (val < 14.0) return '#06b6d4' // cyan-500
-    if (val < 17.0) return '#3b82f6' // blue-500 (breezy)
-    if (val < 20.0) return '#8b5cf6' // violet-500
-    return '#ec4899' // pink-500 (gusty coast/ridges)
-  }
-  return '#ffffff'
+  return getColorForMetric(metric, val)
 }
 
 // Helper: Find closest grid point

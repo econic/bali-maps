@@ -1,0 +1,1942 @@
+[
+  {
+    "lat": -8.8,
+    "lon": 115.15,
+    "elevation": 71,
+    "rain_prop": 4.2,
+    "annual_rainfall": 1295.8,
+    "avg_temp": 26.7,
+    "sun_hours": 7.4,
+    "wind_speed": 15.4
+  },
+  {
+    "lat": -8.8,
+    "lon": 115.2,
+    "elevation": 46,
+    "rain_prop": 4.16,
+    "annual_rainfall": 1262.1,
+    "avg_temp": 26.9,
+    "sun_hours": 7.5,
+    "wind_speed": 15.2
+  },
+  {
+    "lat": -8.8,
+    "lon": 115.55,
+    "elevation": 189,
+    "rain_prop": 4.36,
+    "annual_rainfall": 1455.2,
+    "avg_temp": 26.0,
+    "sun_hours": 7.2,
+    "wind_speed": 15.9
+  },
+  {
+    "lat": -8.8,
+    "lon": 115.6,
+    "elevation": 154,
+    "rain_prop": 4.32,
+    "annual_rainfall": 1407.9,
+    "avg_temp": 26.2,
+    "sun_hours": 7.3,
+    "wind_speed": 15.8
+  },
+  {
+    "lat": -8.75,
+    "lon": 114.45,
+    "elevation": 53,
+    "rain_prop": 4.17,
+    "annual_rainfall": 1271.5,
+    "avg_temp": 26.9,
+    "sun_hours": 7.5,
+    "wind_speed": 15.3
+  },
+  {
+    "lat": -8.75,
+    "lon": 114.5,
+    "elevation": 134,
+    "rain_prop": 4.29,
+    "annual_rainfall": 1380.9,
+    "avg_temp": 26.3,
+    "sun_hours": 7.3,
+    "wind_speed": 15.7
+  },
+  {
+    "lat": -8.75,
+    "lon": 114.55,
+    "elevation": 77,
+    "rain_prop": 4.21,
+    "annual_rainfall": 1304.0,
+    "avg_temp": 26.7,
+    "sun_hours": 7.4,
+    "wind_speed": 15.4
+  },
+  {
+    "lat": -8.75,
+    "lon": 115.5,
+    "elevation": 241,
+    "rain_prop": 4.44,
+    "annual_rainfall": 1525.3,
+    "avg_temp": 25.6,
+    "sun_hours": 7.1,
+    "wind_speed": 16.2
+  },
+  {
+    "lat": -8.75,
+    "lon": 115.55,
+    "elevation": 437,
+    "rain_prop": 4.71,
+    "annual_rainfall": 1790.0,
+    "avg_temp": 24.4,
+    "sun_hours": 6.7,
+    "wind_speed": 17.2
+  },
+  {
+    "lat": -8.75,
+    "lon": 115.6,
+    "elevation": 207,
+    "rain_prop": 4.39,
+    "annual_rainfall": 1479.5,
+    "avg_temp": 25.9,
+    "sun_hours": 7.2,
+    "wind_speed": 16.0
+  },
+  {
+    "lat": -8.7,
+    "lon": 114.45,
+    "elevation": 195,
+    "rain_prop": 4.37,
+    "annual_rainfall": 1463.2,
+    "avg_temp": 25.9,
+    "sun_hours": 7.2,
+    "wind_speed": 11.5
+  },
+  {
+    "lat": -8.7,
+    "lon": 114.5,
+    "elevation": 249,
+    "rain_prop": 4.45,
+    "annual_rainfall": 1536.2,
+    "avg_temp": 25.6,
+    "sun_hours": 7.1,
+    "wind_speed": 11.7
+  },
+  {
+    "lat": -8.7,
+    "lon": 114.55,
+    "elevation": 197,
+    "rain_prop": 4.38,
+    "annual_rainfall": 1466.0,
+    "avg_temp": 25.9,
+    "sun_hours": 7.2,
+    "wind_speed": 11.5
+  },
+  {
+    "lat": -8.7,
+    "lon": 115.2,
+    "elevation": 11,
+    "rain_prop": 4.12,
+    "annual_rainfall": 1214.8,
+    "avg_temp": 27.1,
+    "sun_hours": 7.6,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.7,
+    "lon": 115.25,
+    "elevation": 5,
+    "rain_prop": 4.11,
+    "annual_rainfall": 1206.8,
+    "avg_temp": 27.2,
+    "sun_hours": 7.6,
+    "wind_speed": 10.5
+  },
+  {
+    "lat": -8.7,
+    "lon": 115.45,
+    "elevation": 21,
+    "rain_prop": 4.13,
+    "annual_rainfall": 1228.3,
+    "avg_temp": 27.1,
+    "sun_hours": 7.6,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.7,
+    "lon": 115.5,
+    "elevation": 132,
+    "rain_prop": 4.28,
+    "annual_rainfall": 1378.2,
+    "avg_temp": 26.3,
+    "sun_hours": 7.3,
+    "wind_speed": 11.2
+  },
+  {
+    "lat": -8.7,
+    "lon": 115.55,
+    "elevation": 212,
+    "rain_prop": 4.4,
+    "annual_rainfall": 1486.2,
+    "avg_temp": 25.8,
+    "sun_hours": 7.2,
+    "wind_speed": 11.6
+  },
+  {
+    "lat": -8.65,
+    "lon": 114.45,
+    "elevation": 207,
+    "rain_prop": 4.39,
+    "annual_rainfall": 1479.5,
+    "avg_temp": 25.9,
+    "sun_hours": 7.2,
+    "wind_speed": 11.5
+  },
+  {
+    "lat": -8.65,
+    "lon": 114.5,
+    "elevation": 184,
+    "rain_prop": 4.36,
+    "annual_rainfall": 1448.4,
+    "avg_temp": 26.0,
+    "sun_hours": 7.2,
+    "wind_speed": 11.4
+  },
+  {
+    "lat": -8.65,
+    "lon": 115.15,
+    "elevation": 28,
+    "rain_prop": 4.14,
+    "annual_rainfall": 1237.8,
+    "avg_temp": 27.0,
+    "sun_hours": 7.5,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.65,
+    "lon": 115.2,
+    "elevation": 35,
+    "rain_prop": 4.15,
+    "annual_rainfall": 1247.2,
+    "avg_temp": 27.0,
+    "sun_hours": 7.5,
+    "wind_speed": 10.7
+  },
+  {
+    "lat": -8.65,
+    "lon": 115.25,
+    "elevation": 22,
+    "rain_prop": 4.13,
+    "annual_rainfall": 1229.7,
+    "avg_temp": 27.1,
+    "sun_hours": 7.5,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.6,
+    "lon": 115.1,
+    "elevation": 41,
+    "rain_prop": 4.16,
+    "annual_rainfall": 1255.3,
+    "avg_temp": 26.9,
+    "sun_hours": 7.5,
+    "wind_speed": 10.7
+  },
+  {
+    "lat": -8.6,
+    "lon": 115.15,
+    "elevation": 71,
+    "rain_prop": 4.2,
+    "annual_rainfall": 1295.8,
+    "avg_temp": 26.7,
+    "sun_hours": 7.4,
+    "wind_speed": 10.9
+  },
+  {
+    "lat": -8.6,
+    "lon": 115.2,
+    "elevation": 91,
+    "rain_prop": 4.23,
+    "annual_rainfall": 1322.8,
+    "avg_temp": 26.6,
+    "sun_hours": 7.4,
+    "wind_speed": 11.0
+  },
+  {
+    "lat": -8.6,
+    "lon": 115.25,
+    "elevation": 79,
+    "rain_prop": 4.21,
+    "annual_rainfall": 1306.7,
+    "avg_temp": 26.7,
+    "sun_hours": 7.4,
+    "wind_speed": 10.9
+  },
+  {
+    "lat": -8.6,
+    "lon": 115.3,
+    "elevation": 44,
+    "rain_prop": 4.16,
+    "annual_rainfall": 1259.4,
+    "avg_temp": 26.9,
+    "sun_hours": 7.5,
+    "wind_speed": 10.7
+  },
+  {
+    "lat": -8.55,
+    "lon": 115.05,
+    "elevation": 24,
+    "rain_prop": 4.13,
+    "annual_rainfall": 1382.4,
+    "avg_temp": 27.0,
+    "sun_hours": 7.5,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.55,
+    "lon": 115.1,
+    "elevation": 79,
+    "rain_prop": 4.21,
+    "annual_rainfall": 1456.7,
+    "avg_temp": 26.7,
+    "sun_hours": 7.4,
+    "wind_speed": 10.9
+  },
+  {
+    "lat": -8.55,
+    "lon": 115.15,
+    "elevation": 125,
+    "rain_prop": 4.27,
+    "annual_rainfall": 1518.8,
+    "avg_temp": 26.4,
+    "sun_hours": 7.3,
+    "wind_speed": 11.1
+  },
+  {
+    "lat": -8.55,
+    "lon": 115.2,
+    "elevation": 126,
+    "rain_prop": 4.28,
+    "annual_rainfall": 1520.1,
+    "avg_temp": 26.4,
+    "sun_hours": 7.3,
+    "wind_speed": 11.1
+  },
+  {
+    "lat": -8.55,
+    "lon": 115.25,
+    "elevation": 136,
+    "rain_prop": 4.29,
+    "annual_rainfall": 1533.6,
+    "avg_temp": 26.3,
+    "sun_hours": 7.3,
+    "wind_speed": 11.2
+  },
+  {
+    "lat": -8.55,
+    "lon": 115.3,
+    "elevation": 123,
+    "rain_prop": 4.27,
+    "annual_rainfall": 1516.0,
+    "avg_temp": 26.4,
+    "sun_hours": 7.3,
+    "wind_speed": 11.1
+  },
+  {
+    "lat": -8.55,
+    "lon": 115.35,
+    "elevation": 85,
+    "rain_prop": 4.22,
+    "annual_rainfall": 1464.8,
+    "avg_temp": 26.6,
+    "sun_hours": 7.4,
+    "wind_speed": 10.9
+  },
+  {
+    "lat": -8.55,
+    "lon": 115.4,
+    "elevation": 53,
+    "rain_prop": 4.17,
+    "annual_rainfall": 1421.5,
+    "avg_temp": 26.9,
+    "sun_hours": 7.5,
+    "wind_speed": 10.8
+  },
+  {
+    "lat": -8.55,
+    "lon": 115.45,
+    "elevation": 10,
+    "rain_prop": 4.11,
+    "annual_rainfall": 1363.5,
+    "avg_temp": 27.1,
+    "sun_hours": 7.6,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.0,
+    "elevation": 75,
+    "rain_prop": 4.21,
+    "annual_rainfall": 1451.2,
+    "avg_temp": 26.7,
+    "sun_hours": 7.4,
+    "wind_speed": 10.9
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.05,
+    "elevation": 143,
+    "rain_prop": 4.3,
+    "annual_rainfall": 1543.0,
+    "avg_temp": 26.3,
+    "sun_hours": 7.3,
+    "wind_speed": 11.2
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.1,
+    "elevation": 161,
+    "rain_prop": 4.33,
+    "annual_rainfall": 1567.3,
+    "avg_temp": 26.2,
+    "sun_hours": 7.3,
+    "wind_speed": 11.3
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.15,
+    "elevation": 198,
+    "rain_prop": 4.38,
+    "annual_rainfall": 1617.3,
+    "avg_temp": 25.9,
+    "sun_hours": 7.2,
+    "wind_speed": 11.5
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.2,
+    "elevation": 212,
+    "rain_prop": 4.4,
+    "annual_rainfall": 1636.2,
+    "avg_temp": 25.8,
+    "sun_hours": 7.2,
+    "wind_speed": 11.6
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.25,
+    "elevation": 224,
+    "rain_prop": 4.41,
+    "annual_rainfall": 1652.4,
+    "avg_temp": 25.7,
+    "sun_hours": 7.1,
+    "wind_speed": 11.6
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.3,
+    "elevation": 253,
+    "rain_prop": 4.45,
+    "annual_rainfall": 1691.5,
+    "avg_temp": 25.6,
+    "sun_hours": 7.1,
+    "wind_speed": 11.8
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.35,
+    "elevation": 277,
+    "rain_prop": 4.49,
+    "annual_rainfall": 1724.0,
+    "avg_temp": 25.4,
+    "sun_hours": 7.0,
+    "wind_speed": 11.9
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.4,
+    "elevation": 225,
+    "rain_prop": 4.42,
+    "annual_rainfall": 1653.8,
+    "avg_temp": 25.7,
+    "sun_hours": 7.1,
+    "wind_speed": 11.6
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.45,
+    "elevation": 287,
+    "rain_prop": 4.5,
+    "annual_rainfall": 1737.5,
+    "avg_temp": 25.3,
+    "sun_hours": 7.0,
+    "wind_speed": 11.9
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.5,
+    "elevation": 83,
+    "rain_prop": 4.22,
+    "annual_rainfall": 1462.0,
+    "avg_temp": 26.7,
+    "sun_hours": 7.4,
+    "wind_speed": 10.9
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.55,
+    "elevation": 18,
+    "rain_prop": 4.13,
+    "annual_rainfall": 1374.3,
+    "avg_temp": 27.1,
+    "sun_hours": 7.6,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.5,
+    "lon": 115.6,
+    "elevation": 96,
+    "rain_prop": 4.23,
+    "annual_rainfall": 1479.6,
+    "avg_temp": 26.6,
+    "sun_hours": 7.4,
+    "wind_speed": 11.0
+  },
+  {
+    "lat": -8.45,
+    "lon": 114.9,
+    "elevation": 28,
+    "rain_prop": 4.14,
+    "annual_rainfall": 1387.8,
+    "avg_temp": 27.0,
+    "sun_hours": 7.5,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.45,
+    "lon": 114.95,
+    "elevation": 462,
+    "rain_prop": 4.75,
+    "annual_rainfall": 1973.7,
+    "avg_temp": 24.2,
+    "sun_hours": 6.6,
+    "wind_speed": 12.8
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.0,
+    "elevation": 289,
+    "rain_prop": 4.5,
+    "annual_rainfall": 1740.2,
+    "avg_temp": 25.3,
+    "sun_hours": 7.0,
+    "wind_speed": 11.9
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.05,
+    "elevation": 288,
+    "rain_prop": 4.5,
+    "annual_rainfall": 1738.8,
+    "avg_temp": 25.3,
+    "sun_hours": 7.0,
+    "wind_speed": 11.9
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.1,
+    "elevation": 293,
+    "rain_prop": 4.51,
+    "annual_rainfall": 1745.5,
+    "avg_temp": 25.3,
+    "sun_hours": 7.0,
+    "wind_speed": 12.0
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.15,
+    "elevation": 323,
+    "rain_prop": 4.55,
+    "annual_rainfall": 1786.0,
+    "avg_temp": 25.1,
+    "sun_hours": 6.9,
+    "wind_speed": 12.1
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.2,
+    "elevation": 348,
+    "rain_prop": 4.59,
+    "annual_rainfall": 1819.8,
+    "avg_temp": 24.9,
+    "sun_hours": 6.9,
+    "wind_speed": 12.2
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.25,
+    "elevation": 368,
+    "rain_prop": 4.62,
+    "annual_rainfall": 1846.8,
+    "avg_temp": 24.8,
+    "sun_hours": 6.8,
+    "wind_speed": 12.3
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.3,
+    "elevation": 427,
+    "rain_prop": 4.7,
+    "annual_rainfall": 1926.5,
+    "avg_temp": 24.4,
+    "sun_hours": 6.7,
+    "wind_speed": 12.6
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.35,
+    "elevation": 399,
+    "rain_prop": 4.66,
+    "annual_rainfall": 1888.7,
+    "avg_temp": 24.6,
+    "sun_hours": 6.8,
+    "wind_speed": 12.5
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.4,
+    "elevation": 446,
+    "rain_prop": 4.72,
+    "annual_rainfall": 1952.1,
+    "avg_temp": 24.3,
+    "sun_hours": 6.7,
+    "wind_speed": 12.7
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.45,
+    "elevation": 389,
+    "rain_prop": 4.64,
+    "annual_rainfall": 1875.2,
+    "avg_temp": 24.7,
+    "sun_hours": 6.8,
+    "wind_speed": 12.4
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.5,
+    "elevation": 553,
+    "rain_prop": 4.87,
+    "annual_rainfall": 2096.6,
+    "avg_temp": 23.6,
+    "sun_hours": 6.5,
+    "wind_speed": 13.3
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.55,
+    "elevation": 369,
+    "rain_prop": 4.62,
+    "annual_rainfall": 1848.2,
+    "avg_temp": 24.8,
+    "sun_hours": 6.8,
+    "wind_speed": 12.3
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.6,
+    "elevation": 123,
+    "rain_prop": 4.27,
+    "annual_rainfall": 1516.0,
+    "avg_temp": 26.4,
+    "sun_hours": 7.3,
+    "wind_speed": 11.1
+  },
+  {
+    "lat": -8.45,
+    "lon": 115.65,
+    "elevation": 57,
+    "rain_prop": 4.18,
+    "annual_rainfall": 1427.0,
+    "avg_temp": 26.8,
+    "sun_hours": 7.5,
+    "wind_speed": 10.8
+  },
+  {
+    "lat": -8.4,
+    "lon": 114.6,
+    "elevation": 7,
+    "rain_prop": 4.11,
+    "annual_rainfall": 1359.5,
+    "avg_temp": 27.2,
+    "sun_hours": 7.6,
+    "wind_speed": 10.5
+  },
+  {
+    "lat": -8.4,
+    "lon": 114.65,
+    "elevation": 11,
+    "rain_prop": 4.12,
+    "annual_rainfall": 1364.8,
+    "avg_temp": 27.1,
+    "sun_hours": 7.6,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.4,
+    "lon": 114.8,
+    "elevation": 50,
+    "rain_prop": 4.17,
+    "annual_rainfall": 1417.5,
+    "avg_temp": 26.9,
+    "sun_hours": 7.5,
+    "wind_speed": 10.8
+  },
+  {
+    "lat": -8.4,
+    "lon": 114.85,
+    "elevation": 231,
+    "rain_prop": 4.42,
+    "annual_rainfall": 1661.8,
+    "avg_temp": 25.7,
+    "sun_hours": 7.1,
+    "wind_speed": 11.7
+  },
+  {
+    "lat": -8.4,
+    "lon": 114.9,
+    "elevation": 342,
+    "rain_prop": 4.58,
+    "annual_rainfall": 1811.7,
+    "avg_temp": 25.0,
+    "sun_hours": 6.9,
+    "wind_speed": 12.2
+  },
+  {
+    "lat": -8.4,
+    "lon": 114.95,
+    "elevation": 632,
+    "rain_prop": 4.98,
+    "annual_rainfall": 2203.2,
+    "avg_temp": 23.1,
+    "sun_hours": 6.3,
+    "wind_speed": 13.7
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.0,
+    "elevation": 554,
+    "rain_prop": 4.88,
+    "annual_rainfall": 2097.9,
+    "avg_temp": 23.6,
+    "sun_hours": 6.4,
+    "wind_speed": 13.3
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.05,
+    "elevation": 525,
+    "rain_prop": 4.83,
+    "annual_rainfall": 2058.8,
+    "avg_temp": 23.8,
+    "sun_hours": 6.5,
+    "wind_speed": 13.1
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.1,
+    "elevation": 601,
+    "rain_prop": 4.94,
+    "annual_rainfall": 2161.3,
+    "avg_temp": 23.3,
+    "sun_hours": 6.4,
+    "wind_speed": 13.5
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.15,
+    "elevation": 492,
+    "rain_prop": 4.79,
+    "annual_rainfall": 2014.2,
+    "avg_temp": 24.0,
+    "sun_hours": 6.6,
+    "wind_speed": 13.0
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.2,
+    "elevation": 501,
+    "rain_prop": 4.8,
+    "annual_rainfall": 2026.3,
+    "avg_temp": 23.9,
+    "sun_hours": 6.6,
+    "wind_speed": 13.0
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.25,
+    "elevation": 533,
+    "rain_prop": 4.85,
+    "annual_rainfall": 2069.6,
+    "avg_temp": 23.7,
+    "sun_hours": 6.5,
+    "wind_speed": 13.2
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.3,
+    "elevation": 575,
+    "rain_prop": 4.9,
+    "annual_rainfall": 2126.2,
+    "avg_temp": 23.5,
+    "sun_hours": 6.4,
+    "wind_speed": 13.4
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.35,
+    "elevation": 672,
+    "rain_prop": 5.04,
+    "annual_rainfall": 2257.2,
+    "avg_temp": 22.8,
+    "sun_hours": 6.2,
+    "wind_speed": 13.9
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.4,
+    "elevation": 660,
+    "rain_prop": 5.02,
+    "annual_rainfall": 2241.0,
+    "avg_temp": 22.9,
+    "sun_hours": 6.2,
+    "wind_speed": 13.8
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.45,
+    "elevation": 671,
+    "rain_prop": 5.04,
+    "annual_rainfall": 2255.8,
+    "avg_temp": 22.8,
+    "sun_hours": 6.2,
+    "wind_speed": 13.9
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.5,
+    "elevation": 931,
+    "rain_prop": 5.4,
+    "annual_rainfall": 2606.9,
+    "avg_temp": 21.1,
+    "sun_hours": 5.7,
+    "wind_speed": 15.2
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.55,
+    "elevation": 613,
+    "rain_prop": 4.96,
+    "annual_rainfall": 2177.6,
+    "avg_temp": 23.2,
+    "sun_hours": 6.3,
+    "wind_speed": 13.6
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.6,
+    "elevation": 339,
+    "rain_prop": 4.57,
+    "annual_rainfall": 1807.7,
+    "avg_temp": 25.0,
+    "sun_hours": 6.9,
+    "wind_speed": 12.2
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.65,
+    "elevation": 778,
+    "rain_prop": 5.19,
+    "annual_rainfall": 2400.3,
+    "avg_temp": 22.1,
+    "sun_hours": 6.0,
+    "wind_speed": 14.4
+  },
+  {
+    "lat": -8.4,
+    "lon": 115.7,
+    "elevation": 324,
+    "rain_prop": 4.55,
+    "annual_rainfall": 1787.4,
+    "avg_temp": 25.1,
+    "sun_hours": 6.9,
+    "wind_speed": 12.1
+  },
+  {
+    "lat": -8.35,
+    "lon": 114.55,
+    "elevation": 3,
+    "rain_prop": 4.1,
+    "annual_rainfall": 1354.0,
+    "avg_temp": 27.2,
+    "sun_hours": 7.6,
+    "wind_speed": 10.5
+  },
+  {
+    "lat": -8.35,
+    "lon": 114.6,
+    "elevation": 18,
+    "rain_prop": 4.13,
+    "annual_rainfall": 1374.3,
+    "avg_temp": 27.1,
+    "sun_hours": 7.6,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.35,
+    "lon": 114.65,
+    "elevation": 33,
+    "rain_prop": 4.15,
+    "annual_rainfall": 1394.5,
+    "avg_temp": 27.0,
+    "sun_hours": 7.5,
+    "wind_speed": 10.7
+  },
+  {
+    "lat": -8.35,
+    "lon": 114.7,
+    "elevation": 90,
+    "rain_prop": 4.23,
+    "annual_rainfall": 1471.5,
+    "avg_temp": 26.6,
+    "sun_hours": 7.4,
+    "wind_speed": 10.9
+  },
+  {
+    "lat": -8.35,
+    "lon": 114.75,
+    "elevation": 129,
+    "rain_prop": 4.28,
+    "annual_rainfall": 1524.2,
+    "avg_temp": 26.4,
+    "sun_hours": 7.3,
+    "wind_speed": 11.1
+  },
+  {
+    "lat": -8.35,
+    "lon": 114.8,
+    "elevation": 307,
+    "rain_prop": 4.53,
+    "annual_rainfall": 1764.5,
+    "avg_temp": 25.2,
+    "sun_hours": 7.0,
+    "wind_speed": 12.0
+  },
+  {
+    "lat": -8.35,
+    "lon": 114.85,
+    "elevation": 327,
+    "rain_prop": 4.56,
+    "annual_rainfall": 1791.5,
+    "avg_temp": 25.1,
+    "sun_hours": 6.9,
+    "wind_speed": 12.1
+  },
+  {
+    "lat": -8.35,
+    "lon": 114.9,
+    "elevation": 476,
+    "rain_prop": 4.77,
+    "annual_rainfall": 1992.6,
+    "avg_temp": 24.1,
+    "sun_hours": 6.6,
+    "wind_speed": 12.9
+  },
+  {
+    "lat": -8.35,
+    "lon": 114.95,
+    "elevation": 612,
+    "rain_prop": 4.96,
+    "annual_rainfall": 2176.2,
+    "avg_temp": 23.2,
+    "sun_hours": 6.3,
+    "wind_speed": 13.6
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.0,
+    "elevation": 643,
+    "rain_prop": 5.0,
+    "annual_rainfall": 2218.1,
+    "avg_temp": 23.0,
+    "sun_hours": 6.3,
+    "wind_speed": 13.7
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.05,
+    "elevation": 914,
+    "rain_prop": 5.38,
+    "annual_rainfall": 2583.9,
+    "avg_temp": 21.3,
+    "sun_hours": 5.7,
+    "wind_speed": 15.1
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.1,
+    "elevation": 1484,
+    "rain_prop": 6.18,
+    "annual_rainfall": 3353.4,
+    "avg_temp": 17.6,
+    "sun_hours": 4.5,
+    "wind_speed": 17.9
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.15,
+    "elevation": 762,
+    "rain_prop": 5.17,
+    "annual_rainfall": 2378.7,
+    "avg_temp": 22.2,
+    "sun_hours": 6.0,
+    "wind_speed": 14.3
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.2,
+    "elevation": 681,
+    "rain_prop": 5.05,
+    "annual_rainfall": 2269.3,
+    "avg_temp": 22.8,
+    "sun_hours": 6.2,
+    "wind_speed": 13.9
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.25,
+    "elevation": 738,
+    "rain_prop": 5.13,
+    "annual_rainfall": 2346.3,
+    "avg_temp": 22.4,
+    "sun_hours": 6.1,
+    "wind_speed": 14.2
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.3,
+    "elevation": 811,
+    "rain_prop": 5.24,
+    "annual_rainfall": 2444.9,
+    "avg_temp": 21.9,
+    "sun_hours": 5.9,
+    "wind_speed": 14.6
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.35,
+    "elevation": 906,
+    "rain_prop": 5.37,
+    "annual_rainfall": 2573.1,
+    "avg_temp": 21.3,
+    "sun_hours": 5.7,
+    "wind_speed": 15.0
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.4,
+    "elevation": 900,
+    "rain_prop": 5.36,
+    "annual_rainfall": 2565.0,
+    "avg_temp": 21.4,
+    "sun_hours": 5.7,
+    "wind_speed": 15.0
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.45,
+    "elevation": 1053,
+    "rain_prop": 5.57,
+    "annual_rainfall": 2771.6,
+    "avg_temp": 20.4,
+    "sun_hours": 5.4,
+    "wind_speed": 15.8
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.5,
+    "elevation": 2557,
+    "rain_prop": 6.5,
+    "annual_rainfall": 4200.0,
+    "avg_temp": 10.6,
+    "sun_hours": 4.5,
+    "wind_speed": 23.3
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.55,
+    "elevation": 1033,
+    "rain_prop": 5.55,
+    "annual_rainfall": 2744.6,
+    "avg_temp": 20.5,
+    "sun_hours": 5.5,
+    "wind_speed": 15.7
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.6,
+    "elevation": 305,
+    "rain_prop": 4.53,
+    "annual_rainfall": 1761.8,
+    "avg_temp": 25.2,
+    "sun_hours": 7.0,
+    "wind_speed": 12.0
+  },
+  {
+    "lat": -8.35,
+    "lon": 115.65,
+    "elevation": 183,
+    "rain_prop": 4.36,
+    "annual_rainfall": 1597.0,
+    "avg_temp": 26.0,
+    "sun_hours": 7.2,
+    "wind_speed": 11.4
+  },
+  {
+    "lat": -8.3,
+    "lon": 114.55,
+    "elevation": 35,
+    "rain_prop": 4.15,
+    "annual_rainfall": 1247.2,
+    "avg_temp": 27.0,
+    "sun_hours": 7.5,
+    "wind_speed": 10.7
+  },
+  {
+    "lat": -8.3,
+    "lon": 114.6,
+    "elevation": 132,
+    "rain_prop": 4.28,
+    "annual_rainfall": 1378.2,
+    "avg_temp": 26.3,
+    "sun_hours": 7.3,
+    "wind_speed": 11.2
+  },
+  {
+    "lat": -8.3,
+    "lon": 114.65,
+    "elevation": 310,
+    "rain_prop": 4.53,
+    "annual_rainfall": 1618.5,
+    "avg_temp": 25.2,
+    "sun_hours": 7.0,
+    "wind_speed": 12.1
+  },
+  {
+    "lat": -8.3,
+    "lon": 114.7,
+    "elevation": 386,
+    "rain_prop": 4.64,
+    "annual_rainfall": 1721.1,
+    "avg_temp": 24.7,
+    "sun_hours": 6.8,
+    "wind_speed": 12.4
+  },
+  {
+    "lat": -8.3,
+    "lon": 114.75,
+    "elevation": 333,
+    "rain_prop": 4.57,
+    "annual_rainfall": 1649.5,
+    "avg_temp": 25.0,
+    "sun_hours": 6.9,
+    "wind_speed": 12.2
+  },
+  {
+    "lat": -8.3,
+    "lon": 114.8,
+    "elevation": 526,
+    "rain_prop": 4.84,
+    "annual_rainfall": 1910.1,
+    "avg_temp": 23.8,
+    "sun_hours": 6.5,
+    "wind_speed": 13.1
+  },
+  {
+    "lat": -8.3,
+    "lon": 114.85,
+    "elevation": 729,
+    "rain_prop": 5.12,
+    "annual_rainfall": 2184.2,
+    "avg_temp": 22.5,
+    "sun_hours": 6.1,
+    "wind_speed": 14.1
+  },
+  {
+    "lat": -8.3,
+    "lon": 114.9,
+    "elevation": 626,
+    "rain_prop": 4.98,
+    "annual_rainfall": 2045.1,
+    "avg_temp": 23.1,
+    "sun_hours": 6.3,
+    "wind_speed": 13.6
+  },
+  {
+    "lat": -8.3,
+    "lon": 114.95,
+    "elevation": 798,
+    "rain_prop": 5.22,
+    "annual_rainfall": 2277.3,
+    "avg_temp": 22.0,
+    "sun_hours": 5.9,
+    "wind_speed": 14.5
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.0,
+    "elevation": 416,
+    "rain_prop": 4.68,
+    "annual_rainfall": 1761.6,
+    "avg_temp": 24.5,
+    "sun_hours": 6.7,
+    "wind_speed": 12.6
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.05,
+    "elevation": 822,
+    "rain_prop": 5.25,
+    "annual_rainfall": 2309.7,
+    "avg_temp": 21.9,
+    "sun_hours": 5.9,
+    "wind_speed": 14.6
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.1,
+    "elevation": 1561,
+    "rain_prop": 6.29,
+    "annual_rainfall": 3307.4,
+    "avg_temp": 17.1,
+    "sun_hours": 4.5,
+    "wind_speed": 18.3
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.15,
+    "elevation": 1467,
+    "rain_prop": 6.15,
+    "annual_rainfall": 3180.4,
+    "avg_temp": 17.7,
+    "sun_hours": 4.6,
+    "wind_speed": 17.8
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.2,
+    "elevation": 974,
+    "rain_prop": 5.46,
+    "annual_rainfall": 2514.9,
+    "avg_temp": 20.9,
+    "sun_hours": 5.6,
+    "wind_speed": 15.4
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.25,
+    "elevation": 924,
+    "rain_prop": 5.39,
+    "annual_rainfall": 2447.4,
+    "avg_temp": 21.2,
+    "sun_hours": 5.7,
+    "wind_speed": 15.1
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.3,
+    "elevation": 1064,
+    "rain_prop": 5.59,
+    "annual_rainfall": 2636.4,
+    "avg_temp": 20.3,
+    "sun_hours": 5.4,
+    "wind_speed": 15.8
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.35,
+    "elevation": 1161,
+    "rain_prop": 5.73,
+    "annual_rainfall": 2767.4,
+    "avg_temp": 19.7,
+    "sun_hours": 5.2,
+    "wind_speed": 16.3
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.4,
+    "elevation": 1260,
+    "rain_prop": 5.86,
+    "annual_rainfall": 2901.0,
+    "avg_temp": 19.0,
+    "sun_hours": 5.0,
+    "wind_speed": 16.8
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.45,
+    "elevation": 1124,
+    "rain_prop": 5.67,
+    "annual_rainfall": 2717.4,
+    "avg_temp": 19.9,
+    "sun_hours": 5.3,
+    "wind_speed": 16.1
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.5,
+    "elevation": 873,
+    "rain_prop": 5.32,
+    "annual_rainfall": 2378.6,
+    "avg_temp": 21.5,
+    "sun_hours": 5.8,
+    "wind_speed": 14.9
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.55,
+    "elevation": 505,
+    "rain_prop": 4.81,
+    "annual_rainfall": 1881.8,
+    "avg_temp": 23.9,
+    "sun_hours": 6.5,
+    "wind_speed": 13.0
+  },
+  {
+    "lat": -8.3,
+    "lon": 115.6,
+    "elevation": 74,
+    "rain_prop": 4.2,
+    "annual_rainfall": 1299.9,
+    "avg_temp": 26.7,
+    "sun_hours": 7.4,
+    "wind_speed": 10.9
+  },
+  {
+    "lat": -8.25,
+    "lon": 114.5,
+    "elevation": 38,
+    "rain_prop": 4.15,
+    "annual_rainfall": 1251.3,
+    "avg_temp": 27.0,
+    "sun_hours": 7.5,
+    "wind_speed": 10.7
+  },
+  {
+    "lat": -8.25,
+    "lon": 114.55,
+    "elevation": 91,
+    "rain_prop": 4.23,
+    "annual_rainfall": 1322.8,
+    "avg_temp": 26.6,
+    "sun_hours": 7.4,
+    "wind_speed": 11.0
+  },
+  {
+    "lat": -8.25,
+    "lon": 114.6,
+    "elevation": 394,
+    "rain_prop": 4.65,
+    "annual_rainfall": 1731.9,
+    "avg_temp": 24.6,
+    "sun_hours": 6.8,
+    "wind_speed": 12.5
+  },
+  {
+    "lat": -8.25,
+    "lon": 114.65,
+    "elevation": 1177,
+    "rain_prop": 5.75,
+    "annual_rainfall": 2788.9,
+    "avg_temp": 19.5,
+    "sun_hours": 5.2,
+    "wind_speed": 16.4
+  },
+  {
+    "lat": -8.25,
+    "lon": 114.7,
+    "elevation": 1102,
+    "rain_prop": 5.64,
+    "annual_rainfall": 2687.7,
+    "avg_temp": 20.0,
+    "sun_hours": 5.3,
+    "wind_speed": 16.0
+  },
+  {
+    "lat": -8.25,
+    "lon": 114.75,
+    "elevation": 656,
+    "rain_prop": 5.02,
+    "annual_rainfall": 2085.6,
+    "avg_temp": 22.9,
+    "sun_hours": 6.2,
+    "wind_speed": 13.8
+  },
+  {
+    "lat": -8.25,
+    "lon": 114.8,
+    "elevation": 919,
+    "rain_prop": 5.39,
+    "annual_rainfall": 2440.7,
+    "avg_temp": 21.2,
+    "sun_hours": 5.7,
+    "wind_speed": 15.1
+  },
+  {
+    "lat": -8.25,
+    "lon": 114.85,
+    "elevation": 869,
+    "rain_prop": 5.32,
+    "annual_rainfall": 2373.2,
+    "avg_temp": 21.6,
+    "sun_hours": 5.8,
+    "wind_speed": 14.8
+  },
+  {
+    "lat": -8.25,
+    "lon": 114.9,
+    "elevation": 338,
+    "rain_prop": 4.57,
+    "annual_rainfall": 1656.3,
+    "avg_temp": 25.0,
+    "sun_hours": 6.9,
+    "wind_speed": 12.2
+  },
+  {
+    "lat": -8.25,
+    "lon": 114.95,
+    "elevation": 231,
+    "rain_prop": 4.42,
+    "annual_rainfall": 1511.8,
+    "avg_temp": 25.7,
+    "sun_hours": 7.1,
+    "wind_speed": 11.7
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.0,
+    "elevation": 424,
+    "rain_prop": 4.69,
+    "annual_rainfall": 1772.4,
+    "avg_temp": 24.4,
+    "sun_hours": 6.7,
+    "wind_speed": 12.6
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.05,
+    "elevation": 663,
+    "rain_prop": 5.03,
+    "annual_rainfall": 2095.1,
+    "avg_temp": 22.9,
+    "sun_hours": 6.2,
+    "wind_speed": 13.8
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.1,
+    "elevation": 1220,
+    "rain_prop": 5.81,
+    "annual_rainfall": 2847.0,
+    "avg_temp": 19.3,
+    "sun_hours": 5.1,
+    "wind_speed": 16.6
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.15,
+    "elevation": 1251,
+    "rain_prop": 5.85,
+    "annual_rainfall": 2888.9,
+    "avg_temp": 19.1,
+    "sun_hours": 5.0,
+    "wind_speed": 16.8
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.2,
+    "elevation": 1663,
+    "rain_prop": 6.43,
+    "annual_rainfall": 3445.1,
+    "avg_temp": 16.4,
+    "sun_hours": 4.5,
+    "wind_speed": 18.8
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.25,
+    "elevation": 1130,
+    "rain_prop": 5.68,
+    "annual_rainfall": 2725.5,
+    "avg_temp": 19.9,
+    "sun_hours": 5.3,
+    "wind_speed": 16.1
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.3,
+    "elevation": 1263,
+    "rain_prop": 5.87,
+    "annual_rainfall": 2905.1,
+    "avg_temp": 19.0,
+    "sun_hours": 5.0,
+    "wind_speed": 16.8
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.35,
+    "elevation": 1072,
+    "rain_prop": 5.6,
+    "annual_rainfall": 2647.2,
+    "avg_temp": 20.2,
+    "sun_hours": 5.4,
+    "wind_speed": 15.9
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.4,
+    "elevation": 1045,
+    "rain_prop": 5.56,
+    "annual_rainfall": 2610.8,
+    "avg_temp": 20.4,
+    "sun_hours": 5.4,
+    "wind_speed": 15.7
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.45,
+    "elevation": 854,
+    "rain_prop": 5.3,
+    "annual_rainfall": 2352.9,
+    "avg_temp": 21.6,
+    "sun_hours": 5.8,
+    "wind_speed": 14.8
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.5,
+    "elevation": 230,
+    "rain_prop": 4.42,
+    "annual_rainfall": 1510.5,
+    "avg_temp": 25.7,
+    "sun_hours": 7.1,
+    "wind_speed": 11.7
+  },
+  {
+    "lat": -8.25,
+    "lon": 115.55,
+    "elevation": 121,
+    "rain_prop": 4.27,
+    "annual_rainfall": 1363.3,
+    "avg_temp": 26.4,
+    "sun_hours": 7.3,
+    "wind_speed": 11.1
+  },
+  {
+    "lat": -8.2,
+    "lon": 114.45,
+    "elevation": 36,
+    "rain_prop": 4.15,
+    "annual_rainfall": 1248.6,
+    "avg_temp": 27.0,
+    "sun_hours": 7.5,
+    "wind_speed": 10.7
+  },
+  {
+    "lat": -8.2,
+    "lon": 114.5,
+    "elevation": 430,
+    "rain_prop": 4.7,
+    "annual_rainfall": 1780.5,
+    "avg_temp": 24.4,
+    "sun_hours": 6.7,
+    "wind_speed": 12.7
+  },
+  {
+    "lat": -8.2,
+    "lon": 114.55,
+    "elevation": 222,
+    "rain_prop": 4.41,
+    "annual_rainfall": 1499.7,
+    "avg_temp": 25.8,
+    "sun_hours": 7.1,
+    "wind_speed": 11.6
+  },
+  {
+    "lat": -8.2,
+    "lon": 114.6,
+    "elevation": 323,
+    "rain_prop": 4.55,
+    "annual_rainfall": 1636.0,
+    "avg_temp": 25.1,
+    "sun_hours": 6.9,
+    "wind_speed": 12.1
+  },
+  {
+    "lat": -8.2,
+    "lon": 114.65,
+    "elevation": 993,
+    "rain_prop": 5.49,
+    "annual_rainfall": 2540.6,
+    "avg_temp": 20.7,
+    "sun_hours": 5.5,
+    "wind_speed": 15.5
+  },
+  {
+    "lat": -8.2,
+    "lon": 114.7,
+    "elevation": 899,
+    "rain_prop": 5.36,
+    "annual_rainfall": 2413.7,
+    "avg_temp": 21.4,
+    "sun_hours": 5.7,
+    "wind_speed": 15.0
+  },
+  {
+    "lat": -8.2,
+    "lon": 114.75,
+    "elevation": 198,
+    "rain_prop": 4.38,
+    "annual_rainfall": 1467.3,
+    "avg_temp": 25.9,
+    "sun_hours": 7.2,
+    "wind_speed": 11.5
+  },
+  {
+    "lat": -8.2,
+    "lon": 114.8,
+    "elevation": 47,
+    "rain_prop": 4.17,
+    "annual_rainfall": 1263.5,
+    "avg_temp": 26.9,
+    "sun_hours": 7.5,
+    "wind_speed": 10.7
+  },
+  {
+    "lat": -8.2,
+    "lon": 114.85,
+    "elevation": 15,
+    "rain_prop": 4.12,
+    "annual_rainfall": 1220.2,
+    "avg_temp": 27.1,
+    "sun_hours": 7.6,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.2,
+    "lon": 114.9,
+    "elevation": 27,
+    "rain_prop": 4.14,
+    "annual_rainfall": 1236.5,
+    "avg_temp": 27.0,
+    "sun_hours": 7.5,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.2,
+    "lon": 114.95,
+    "elevation": 30,
+    "rain_prop": 4.14,
+    "annual_rainfall": 1240.5,
+    "avg_temp": 27.0,
+    "sun_hours": 7.5,
+    "wind_speed": 10.7
+  },
+  {
+    "lat": -8.2,
+    "lon": 115.0,
+    "elevation": 215,
+    "rain_prop": 4.4,
+    "annual_rainfall": 1490.2,
+    "avg_temp": 25.8,
+    "sun_hours": 7.1,
+    "wind_speed": 11.6
+  },
+  {
+    "lat": -8.2,
+    "lon": 115.05,
+    "elevation": 533,
+    "rain_prop": 4.85,
+    "annual_rainfall": 1919.6,
+    "avg_temp": 23.7,
+    "sun_hours": 6.5,
+    "wind_speed": 13.2
+  },
+  {
+    "lat": -8.2,
+    "lon": 115.1,
+    "elevation": 791,
+    "rain_prop": 5.21,
+    "annual_rainfall": 2267.9,
+    "avg_temp": 22.1,
+    "sun_hours": 6.0,
+    "wind_speed": 14.5
+  },
+  {
+    "lat": -8.2,
+    "lon": 115.15,
+    "elevation": 761,
+    "rain_prop": 5.17,
+    "annual_rainfall": 2227.4,
+    "avg_temp": 22.3,
+    "sun_hours": 6.0,
+    "wind_speed": 14.3
+  },
+  {
+    "lat": -8.2,
+    "lon": 115.2,
+    "elevation": 694,
+    "rain_prop": 5.07,
+    "annual_rainfall": 2136.9,
+    "avg_temp": 22.7,
+    "sun_hours": 6.2,
+    "wind_speed": 14.0
+  },
+  {
+    "lat": -8.2,
+    "lon": 115.25,
+    "elevation": 1150,
+    "rain_prop": 5.71,
+    "annual_rainfall": 2752.5,
+    "avg_temp": 19.7,
+    "sun_hours": 5.2,
+    "wind_speed": 16.2
+  },
+  {
+    "lat": -8.2,
+    "lon": 115.3,
+    "elevation": 1378,
+    "rain_prop": 6.03,
+    "annual_rainfall": 3060.3,
+    "avg_temp": 18.2,
+    "sun_hours": 4.7,
+    "wind_speed": 17.4
+  },
+  {
+    "lat": -8.2,
+    "lon": 115.35,
+    "elevation": 1464,
+    "rain_prop": 6.15,
+    "annual_rainfall": 3176.4,
+    "avg_temp": 17.7,
+    "sun_hours": 4.6,
+    "wind_speed": 17.8
+  },
+  {
+    "lat": -8.2,
+    "lon": 115.4,
+    "elevation": 1346,
+    "rain_prop": 5.98,
+    "annual_rainfall": 3017.1,
+    "avg_temp": 18.5,
+    "sun_hours": 4.8,
+    "wind_speed": 17.2
+  },
+  {
+    "lat": -8.2,
+    "lon": 115.45,
+    "elevation": 276,
+    "rain_prop": 4.49,
+    "annual_rainfall": 1572.6,
+    "avg_temp": 25.4,
+    "sun_hours": 7.0,
+    "wind_speed": 11.9
+  },
+  {
+    "lat": -8.2,
+    "lon": 115.5,
+    "elevation": 20,
+    "rain_prop": 4.13,
+    "annual_rainfall": 1227.0,
+    "avg_temp": 27.1,
+    "sun_hours": 7.6,
+    "wind_speed": 10.6
+  },
+  {
+    "lat": -8.15,
+    "lon": 114.45,
+    "elevation": 34,
+    "rain_prop": 3.65,
+    "annual_rainfall": 995.9,
+    "avg_temp": 27.0,
+    "sun_hours": 7.5,
+    "wind_speed": 12.2
+  },
+  {
+    "lat": -8.15,
+    "lon": 114.5,
+    "elevation": 69,
+    "rain_prop": 3.7,
+    "annual_rainfall": 1043.2,
+    "avg_temp": 26.8,
+    "sun_hours": 7.5,
+    "wind_speed": 12.3
+  },
+  {
+    "lat": -8.15,
+    "lon": 114.55,
+    "elevation": 33,
+    "rain_prop": 3.65,
+    "annual_rainfall": 994.5,
+    "avg_temp": 27.0,
+    "sun_hours": 7.6,
+    "wind_speed": 12.2
+  },
+  {
+    "lat": -8.15,
+    "lon": 114.6,
+    "elevation": 24,
+    "rain_prop": 3.63,
+    "annual_rainfall": 982.4,
+    "avg_temp": 27.0,
+    "sun_hours": 7.6,
+    "wind_speed": 12.1
+  },
+  {
+    "lat": -8.15,
+    "lon": 114.65,
+    "elevation": 25,
+    "rain_prop": 3.63,
+    "annual_rainfall": 983.8,
+    "avg_temp": 27.0,
+    "sun_hours": 7.6,
+    "wind_speed": 12.1
+  },
+  {
+    "lat": -8.15,
+    "lon": 115.05,
+    "elevation": 15,
+    "rain_prop": 3.62,
+    "annual_rainfall": 970.2,
+    "avg_temp": 27.1,
+    "sun_hours": 7.6,
+    "wind_speed": 12.1
+  },
+  {
+    "lat": -8.15,
+    "lon": 115.1,
+    "elevation": 144,
+    "rain_prop": 3.8,
+    "annual_rainfall": 1144.4,
+    "avg_temp": 26.3,
+    "sun_hours": 7.3,
+    "wind_speed": 12.7
+  },
+  {
+    "lat": -8.15,
+    "lon": 115.15,
+    "elevation": 261,
+    "rain_prop": 3.97,
+    "annual_rainfall": 1302.3,
+    "avg_temp": 25.5,
+    "sun_hours": 7.1,
+    "wind_speed": 13.3
+  },
+  {
+    "lat": -8.15,
+    "lon": 115.2,
+    "elevation": 279,
+    "rain_prop": 3.99,
+    "annual_rainfall": 1326.7,
+    "avg_temp": 25.4,
+    "sun_hours": 7.0,
+    "wind_speed": 13.4
+  },
+  {
+    "lat": -8.15,
+    "lon": 115.25,
+    "elevation": 772,
+    "rain_prop": 4.68,
+    "annual_rainfall": 1992.2,
+    "avg_temp": 22.2,
+    "sun_hours": 6.0,
+    "wind_speed": 15.9
+  },
+  {
+    "lat": -8.15,
+    "lon": 115.3,
+    "elevation": 585,
+    "rain_prop": 4.42,
+    "annual_rainfall": 1739.8,
+    "avg_temp": 23.4,
+    "sun_hours": 6.4,
+    "wind_speed": 14.9
+  },
+  {
+    "lat": -8.15,
+    "lon": 115.35,
+    "elevation": 513,
+    "rain_prop": 4.32,
+    "annual_rainfall": 1642.6,
+    "avg_temp": 23.9,
+    "sun_hours": 6.6,
+    "wind_speed": 14.6
+  },
+  {
+    "lat": -8.15,
+    "lon": 115.4,
+    "elevation": 46,
+    "rain_prop": 3.66,
+    "annual_rainfall": 1012.1,
+    "avg_temp": 26.9,
+    "sun_hours": 7.5,
+    "wind_speed": 12.2
+  },
+  {
+    "lat": -8.1,
+    "lon": 114.45,
+    "elevation": 61,
+    "rain_prop": 3.69,
+    "annual_rainfall": 1032.3,
+    "avg_temp": 26.8,
+    "sun_hours": 7.5,
+    "wind_speed": 12.3
+  },
+  {
+    "lat": -8.1,
+    "lon": 115.1,
+    "elevation": 9,
+    "rain_prop": 3.61,
+    "annual_rainfall": 962.1,
+    "avg_temp": 27.1,
+    "sun_hours": 7.6,
+    "wind_speed": 12.0
+  },
+  {
+    "lat": -8.1,
+    "lon": 115.15,
+    "elevation": 75,
+    "rain_prop": 3.71,
+    "annual_rainfall": 1051.2,
+    "avg_temp": 26.7,
+    "sun_hours": 7.5,
+    "wind_speed": 12.4
+  },
+  {
+    "lat": -8.1,
+    "lon": 115.2,
+    "elevation": 139,
+    "rain_prop": 3.79,
+    "annual_rainfall": 1137.7,
+    "avg_temp": 26.3,
+    "sun_hours": 7.3,
+    "wind_speed": 12.7
+  },
+  {
+    "lat": -8.1,
+    "lon": 115.25,
+    "elevation": 177,
+    "rain_prop": 3.85,
+    "annual_rainfall": 1189.0,
+    "avg_temp": 26.0,
+    "sun_hours": 7.3,
+    "wind_speed": 12.9
+  }
+]

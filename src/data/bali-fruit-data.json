@@ -1,0 +1,290 @@
+[
+  {
+    "name": "Mangosteen (Manggis)",
+    "category": "Exotic Fruit",
+    "description": "A tropical evergreen tree famous for its sweet, tangy, juicy white flesh enclosed in a thick, deep purple rind. Known as the queen of fruits.",
+    "good": {"min": 0, "max": 800},
+    "kinda": [{"min": 800, "max": 1000}],
+    "not": [{"min": 1000, "max": 4000}]
+  },
+  {
+    "name": "Durian",
+    "category": "Exotic Fruit",
+    "description": "A large tropical fruit famous for its formidable spiky husk and rich, custard-like flesh with a famously strong, pungent aroma.",
+    "good": {"min": 0, "max": 800},
+    "kinda": [{"min": 800, "max": 1000}],
+    "not": [{"min": 1000, "max": 4000}]
+  },
+  {
+    "name": "Snake Fruit (Salak)",
+    "category": "Exotic Fruit",
+    "description": "A palm fruit covered in scaly, reddish-brown skin resembling snake skin, containing crunchy, sweet, and slightly acidic segments.",
+    "good": {"min": 300, "max": 800},
+    "kinda": [{"min": 0, "max": 300}, {"min": 800, "max": 1100}],
+    "not": [{"min": 1100, "max": 4000}]
+  },
+  {
+    "name": "Rambutan",
+    "category": "Exotic Fruit",
+    "description": "A medium-sized tropical tree producing bright red or yellow fruits covered in soft, hair-like spines, with sweet, translucent white flesh.",
+    "good": {"min": 0, "max": 600},
+    "kinda": [{"min": 600, "max": 800}],
+    "not": [{"min": 800, "max": 4000}]
+  },
+  {
+    "name": "Jackfruit (Nangka)",
+    "category": "Exotic Fruit",
+    "description": "The largest tree-borne fruit in the world, featuring a thick spiky rind and sweet, yellow, highly aromatic bulbs used ripe or cooked green.",
+    "good": {"min": 0, "max": 1000},
+    "kinda": [{"min": 1000, "max": 1200}],
+    "not": [{"min": 1200, "max": 4000}]
+  },
+  {
+    "name": "Soursop (Sirsak)",
+    "category": "Exotic Fruit",
+    "description": "A tropical fruit with a dark green, prickly skin and soft, fibrous white pulp that is delightfully sweet and sour, perfect for juices.",
+    "good": {"min": 0, "max": 1000},
+    "kinda": [{"min": 1000, "max": 1200}],
+    "not": [{"min": 1200, "max": 4000}]
+  },
+  {
+    "name": "Duku / Langsat",
+    "category": "Exotic Fruit",
+    "description": "A sweet, grape-like tropical fruit growing in clusters, featuring a thin leathery skin and translucent, sweet-sour segmented flesh.",
+    "good": {"min": 0, "max": 600},
+    "kinda": [{"min": 600, "max": 800}],
+    "not": [{"min": 800, "max": 4000}]
+  },
+  {
+    "name": "Dragon Fruit (Buah Naga)",
+    "category": "Refreshing Fruit",
+    "description": "A climbing cactus fruit with striking pink or yellow skin and sweet, seed-speckled white or deep red flesh, rich in antioxidants.",
+    "good": {"min": 0, "max": 400},
+    "kinda": [{"min": 400, "max": 700}],
+    "not": [{"min": 700, "max": 4000}]
+  },
+  {
+    "name": "Pineapple (Nanas Madu)",
+    "category": "Refreshing Fruit",
+    "description": "A sweet, juicy tropical fruit with a spiky crown and golden flesh, known for its honey-like sweetness and rich flavor when grown in sunny areas.",
+    "good": {"min": 0, "max": 600},
+    "kinda": [{"min": 600, "max": 1000}],
+    "not": [{"min": 1000, "max": 4000}]
+  },
+  {
+    "name": "Kintamani Orange (Jeruk)",
+    "category": "Citrus",
+    "description": "A famous Balinese highland citrus known for its sweet-tart flavor, thin skin, and bright orange color when grown in cool climates.",
+    "good": {"min": 800, "max": 1500},
+    "kinda": [{"min": 600, "max": 800}, {"min": 1500, "max": 1800}],
+    "not": [{"min": 0, "max": 600}, {"min": 1800, "max": 4000}]
+  },
+  {
+    "name": "Bali Pomelo (Jeruk Bali)",
+    "category": "Citrus",
+    "description": "A large citrus fruit with thick rind and sweet, juicy, pinkish-white vesicles, thriving in warm and sunny lowland areas of Bali.",
+    "good": {"min": 0, "max": 400},
+    "kinda": [{"min": 400, "max": 800}],
+    "not": [{"min": 800, "max": 4000}]
+  },
+  {
+    "name": "Passionfruit (Markisa)",
+    "category": "Vine Fruit",
+    "description": "A climbing vine producing highly aromatic, sweet-tart fruit filled with juicy seeds, thriving in cool upland valleys.",
+    "good": {"min": 800, "max": 1500},
+    "kinda": [{"min": 500, "max": 800}, {"min": 1500, "max": 2000}],
+    "not": [{"min": 0, "max": 500}, {"min": 2000, "max": 4000}]
+  },
+  {
+    "name": "Strawberries (Stroberi)",
+    "category": "Berry",
+    "description": "Delicious red berries cultivated in cool, misty mountain regions like Bedugul, requiring lower temperatures to develop sweetness.",
+    "good": {"min": 1100, "max": 1500},
+    "kinda": [{"min": 800, "max": 1100}, {"min": 1500, "max": 2200}],
+    "not": [{"min": 0, "max": 800}, {"min": 2200, "max": 4000}]
+  },
+  {
+    "name": "Water Apple (Jambu Air)",
+    "category": "Refreshing Fruit",
+    "description": "A crisp, bell-shaped tropical fruit with high water content and a mild sweet flavor, thriving in hot, wet lowland conditions.",
+    "good": {"min": 0, "max": 700},
+    "kinda": [{"min": 700, "max": 1200}],
+    "not": [{"min": 1200, "max": 4000}]
+  },
+  {
+    "name": "Starfruit (Belimbing)",
+    "category": "Refreshing Fruit",
+    "description": "A star-shaped tropical fruit that is juicy, crunchy, and text-sweet, highly suited to warm, sun-drenched coastal and lowland plains.",
+    "good": {"min": 0, "max": 500},
+    "kinda": [{"min": 500, "max": 1000}],
+    "not": [{"min": 1000, "max": 4000}]
+  },
+  {
+    "name": "Mango (Mangga)",
+    "category": "Everyday Staple",
+    "description": "A luscious, sweet tropical fruit requiring hot dry seasons to flower and mature, producing best on Bali's sunny northern and southern plains.",
+    "good": {"min": 0, "max": 600},
+    "kinda": [{"min": 600, "max": 1000}],
+    "not": [{"min": 1000, "max": 4000}]
+  },
+  {
+    "name": "Papaya (Pepaya)",
+    "category": "Everyday Staple",
+    "description": "A fast-growing herb producing sweet, orange-fleshed melons year-round, thriving in warm climates with well-drained soils.",
+    "good": {"min": 0, "max": 1000},
+    "kinda": [{"min": 1000, "max": 1500}],
+    "not": [{"min": 1500, "max": 4000}]
+  },
+  {
+    "name": "Banana (Pisang)",
+    "category": "Everyday Staple",
+    "description": "A versatile tropical staple crop with fast-growing giant herbs that yield rich banana bunches across Bali's lowlands and hills.",
+    "good": {"min": 0, "max": 1200},
+    "kinda": [{"min": 1200, "max": 1800}],
+    "not": [{"min": 1800, "max": 4000}]
+  },
+  {
+    "name": "Bali Berry (Kepundung)",
+    "category": "Everyday Staple",
+    "description": "Also known as Kepundung or Menteng, this native Bali fruit is small, sour-sweet, and rich in vitamin C, growing in clusters on woody trees.",
+    "good": {"min": 0, "max": 800},
+    "kinda": [{"min": 800, "max": 1200}],
+    "not": [{"min": 1200, "max": 4000}]
+  },
+  {
+    "name": "Avocado (Alpukat)",
+    "category": "Everyday Staple",
+    "description": "A nutrient-dense fruit with a rich, buttery texture. It thrives in cooler highland climates with well-drained volcanic soils.",
+    "good": {"min": 500, "max": 1500},
+    "kinda": [{"min": 300, "max": 500}, {"min": 1500, "max": 2000}],
+    "not": [{"min": 0, "max": 300}, {"min": 2000, "max": 4000}]
+  },
+  {
+    "name": "Coconut (Kelapa)",
+    "category": "Palm Fruit / Staple",
+    "description": "The iconic tropical palm of Bali's coastlines, providing refreshing water, rich cream, and oil. Essential for local daily life and ceremonies.",
+    "good": {"min": 0, "max": 600},
+    "kinda": [{"min": 600, "max": 900}],
+    "not": [{"min": 900, "max": 4000}]
+  },
+  {
+    "name": "Guava (Jambu Biji)",
+    "category": "Everyday Staple",
+    "description": "A hardy tropical fruit with pink or white flesh, rich in vitamin C and dietary fiber. Highly adaptable but prefers warm lowlands.",
+    "good": {"min": 0, "max": 1000},
+    "kinda": [{"min": 1000, "max": 1500}],
+    "not": [{"min": 1500, "max": 4000}]
+  },
+  {
+    "name": "Breadfruit (Sukun)",
+    "category": "Starch / Tree Fruit",
+    "description": "A versatile tropical fruit with starchy, white flesh, typically eaten fried or boiled. Thrives in humid, low-elevation areas.",
+    "good": {"min": 0, "max": 600},
+    "kinda": [{"min": 600, "max": 1000}],
+    "not": [{"min": 1000, "max": 4000}]
+  },
+  {
+    "name": "Coffee - Arabica (Kopi Arabika)",
+    "category": "Cash Crop / Bean",
+    "description": "Premium highland coffee prized for its complex, aromatic, and acidic profile. Thrives in cool temperatures and volcanic soils.",
+    "good": {"min": 1000, "max": 1700},
+    "kinda": [{"min": 600, "max": 1000}, {"min": 1700, "max": 2200}],
+    "not": [{"min": 0, "max": 600}, {"min": 2200, "max": 4000}]
+  },
+  {
+    "name": "Coffee - Robusta (Kopi Robusta)",
+    "category": "Cash Crop / Bean",
+    "description": "A bold, strong coffee with high caffeine and low acidity. Thrives in warmer, mid-elevation environments, showing excellent disease resistance.",
+    "good": {"min": 200, "max": 800},
+    "kinda": [{"min": 0, "max": 200}, {"min": 800, "max": 1200}],
+    "not": [{"min": 1200, "max": 4000}]
+  },
+  {
+    "name": "Cacao (Kakao)",
+    "category": "Cash Crop / Pod",
+    "description": "The source of chocolate, this tropical tree requires constant warmth, shade, and humidity. Thrives in lowland alluvial soils.",
+    "good": {"min": 0, "max": 800},
+    "kinda": [{"min": 800, "max": 1200}],
+    "not": [{"min": 1200, "max": 4000}]
+  },
+  {
+    "name": "Cashew (Kacang Mete)",
+    "category": "Nut / Cash Crop",
+    "description": "A drought-tolerant tree producing premium nuts and cashew apples. Highly suited to the dry, warm coastal soils of northern and eastern Bali.",
+    "good": {"min": 0, "max": 500},
+    "kinda": [{"min": 500, "max": 1000}],
+    "not": [{"min": 1000, "max": 4000}]
+  },
+  {
+    "name": "Vanilla (Vanili)",
+    "category": "Spice / Orchid",
+    "description": "Vanilla is a climbing orchid cultivated for its aromatic pods, thriving in humid, filtered shade and requiring careful hand-pollination.",
+    "good": {"min": 400, "max": 1200},
+    "kinda": [{"min": 200, "max": 400}, {"min": 1200, "max": 1500}],
+    "not": [{"min": 0, "max": 200}, {"min": 1500, "max": 4000}]
+  },
+  {
+    "name": "Cloves (Cengkeh)",
+    "category": "Spice / Tree",
+    "description": "Cloves are aromatic dried flower buds of an evergreen tree, widely grown in Bali's wet hillsides for spice and cigarette production.",
+    "good": {"min": 400, "max": 1000},
+    "kinda": [{"min": 200, "max": 400}, {"min": 1000, "max": 1300}],
+    "not": [{"min": 0, "max": 200}, {"min": 1300, "max": 4000}]
+  },
+  {
+    "name": "Palm Sugar / Aren",
+    "category": "Sap / Sugar",
+    "description": "An adaptable, versatile palm tapped for its sweet sap to produce traditional palm sugar (gula aren) and alcoholic drinks.",
+    "good": {"min": 0, "max": 1200},
+    "kinda": [{"min": 1200, "max": 1700}],
+    "not": [{"min": 1700, "max": 4000}]
+  },
+  {
+    "name": "Rice (Padi)",
+    "category": "Grain / Staple",
+    "description": "Bali's agricultural staple, grown in stunning terraced subak systems from coastal plains to cool mountain valleys.",
+    "good": {"min": 0, "max": 1200},
+    "kinda": [{"min": 1200, "max": 1500}],
+    "not": [{"min": 1500, "max": 4000}]
+  },
+  {
+    "name": "Tamarind (Asam Jawa)",
+    "category": "Legume / Spice",
+    "description": "A large, drought-tolerant, slow-growing tree producing sour, pulp-filled pods used widely in Indonesian cooking and drinks.",
+    "good": {"min": 0, "max": 400},
+    "kinda": [{"min": 400, "max": 800}],
+    "not": [{"min": 800, "max": 4000}]
+  },
+  {
+    "name": "Bali White Mango (Wani)",
+    "category": "Everyday Staple",
+    "description": "A highly prized local white mango with smooth, fragrant, and juicy white flesh, eaten fresh or used in spicy sambals.",
+    "good": {"min": 0, "max": 500},
+    "kinda": [{"min": 500, "max": 900}],
+    "not": [{"min": 900, "max": 4000}]
+  },
+  {
+    "name": "Custard Apple (Srikaya)",
+    "category": "Exotic Fruit",
+    "description": "A small, sweet tropical fruit with knobby green skin and creamy, custard-like white pulp surrounding black seeds.",
+    "good": {"min": 0, "max": 800},
+    "kinda": [{"min": 800, "max": 1200}],
+    "not": [{"min": 1200, "max": 4000}]
+  },
+  {
+    "name": "Kaffir Lime (Jeruk Purut)",
+    "category": "Citrus",
+    "description": "A highly aromatic citrus shrub prized for its bumpy, oil-rich fruit and double-lobed leaves used in Southeast Asian cuisine.",
+    "good": {"min": 0, "max": 1000},
+    "kinda": [{"min": 1000, "max": 1400}],
+    "not": [{"min": 1400, "max": 4000}]
+  },
+  {
+    "name": "Buni Berry (Buni)",
+    "category": "Berry",
+    "description": "A native evergreen tree bearing large grape-like clusters of berries that transition from green to red and dark purple.",
+    "good": {"min": 0, "max": 800},
+    "kinda": [{"min": 800, "max": 1200}],
+    "not": [{"min": 1200, "max": 4000}]
+  }
+]

@@ -3,23 +3,14 @@ import { ref } from 'vue'
 import BaliMap from './components/BaliMap.vue'
 import ClimateSidebar from './components/ClimateSidebar.vue'
 import { Menu } from '@lucide/vue'
-
-// Custom interface for our weather record
-interface WeatherRecord {
-  lat: number
-  lon: number
-  elevation: number
-  rain_prop: number
-  annual_rainfall: number
-  avg_temp: number
-  sun_hours: number
-  wind_speed: number
-}
+import type { ClimateMetrics } from './utils/climateSynthesis'
+import fruitData from './data/bali-fruit-data.json'
 
 // Global shared states
-const selectedOverlay = ref<'rain_prop' | 'annual_rainfall' | 'avg_temp' | 'sun_hours' | 'wind_speed'>('rain_prop')
-const overlayOpacity = ref<number>(0.65)
-const selectedPoint = ref<WeatherRecord | null>(null)
+const selectedOverlay = ref<'rain_prop' | 'annual_rainfall' | 'avg_temp' | 'sun_hours' | 'wind_speed' | 'fruit_suitability'>('rain_prop')
+const selectedFruits = ref<string[]>(fruitData.map(f => f.name))
+const overlayOpacity = ref<number>(0.25)
+const selectedPoint = ref<ClimateMetrics | null>(null)
 const sidebarOpen = ref<boolean>(true)
 
 // Reference to map component to trigger basemap style changes
@@ -39,6 +30,7 @@ function handleBaseMapChange(style: 'dark' | 'satellite' | 'terrain') {
     <BaliMap
       ref="mapRef"
       :selectedOverlay="selectedOverlay"
+      :selectedFruits="selectedFruits"
       :opacity="overlayOpacity"
       v-model:selectedPoint="selectedPoint"
       class="absolute inset-0 w-full h-full"
@@ -47,6 +39,7 @@ function handleBaseMapChange(style: 'dark' | 'satellite' | 'terrain') {
     <!-- Sidebar Controls Panel (Floating Absolute Overlay) -->
     <ClimateSidebar
       v-model:selectedOverlay="selectedOverlay"
+      v-model:selectedFruits="selectedFruits"
       v-model:opacity="overlayOpacity"
       v-model:sidebarOpen="sidebarOpen"
       :selectedPoint="selectedPoint"

@@ -15,32 +15,25 @@ import {
   X,
   TrendingUp,
   Compass,
-  ArrowRight
+  ArrowRight,
+  Sprout
 } from '@lucide/vue'
-
-// WeatherRecord interface
-interface WeatherRecord {
-  lat: number
-  lon: number
-  elevation: number
-  rain_prop: number
-  annual_rainfall: number
-  avg_temp: number
-  sun_hours: number
-  wind_speed: number
-}
+import type { ClimateMetrics } from '../utils/climateSynthesis'
+import fruitData from '../data/bali-fruit-data.json'
 
 // Props
 const props = defineProps<{
-  selectedOverlay: 'rain_prop' | 'annual_rainfall' | 'avg_temp' | 'sun_hours' | 'wind_speed'
+  selectedOverlay: 'rain_prop' | 'annual_rainfall' | 'avg_temp' | 'sun_hours' | 'wind_speed' | 'fruit_suitability'
+  selectedFruits: string[]
   opacity: number
-  selectedPoint: WeatherRecord | null
+  selectedPoint: ClimateMetrics | null
   sidebarOpen: boolean
 }>()
 
 // Emits
 const emit = defineEmits<{
-  (e: 'update:selectedOverlay', overlay: 'rain_prop' | 'annual_rainfall' | 'avg_temp' | 'sun_hours' | 'wind_speed'): void
+  (e: 'update:selectedOverlay', overlay: 'rain_prop' | 'annual_rainfall' | 'avg_temp' | 'sun_hours' | 'wind_speed' | 'fruit_suitability'): void
+  (e: 'update:selectedFruits', fruits: string[]): void
   (e: 'update:opacity', val: number): void
   (e: 'update:sidebarOpen', val: boolean): void
   (e: 'changeBaseMap', style: 'dark' | 'satellite' | 'terrain'): void
@@ -95,8 +88,93 @@ const overlays = [
     color: 'text-pink-400',
     bgColor: 'bg-pink-500/10',
     glowColor: 'group-hover:border-pink-500/30'
+  },
+  {
+    id: 'fruit_suitability' as const,
+    label: 'Fruit Suitability',
+    description: 'Dynamic suitability mapping of 36 tropical crops in Bali, showing what share thrives by elevation.',
+    icon: Sprout,
+    color: 'text-lime-400',
+    bgColor: 'bg-lime-500/10',
+    glowColor: 'group-hover:border-lime-500/30'
   }
 ]
+
+const fruitSearchQuery = ref('')
+
+const filteredFruits = computed(() => {
+  if (!fruitSearchQuery.value) return fruitData
+  const q = fruitSearchQuery.value.toLowerCase()
+  return fruitData.filter(f => f.name.toLowerCase().includes(q) || f.category.toLowerCase().includes(q))
+})
+
+function toggleFruit(name: string) {
+  const list = [...props.selectedFruits]
+  const idx = list.indexOf(name)
+  if (idx > -1) {
+    list.splice(idx, 1)
+  } else {
+    list.push(name)
+  }
+  emit('update:selectedFruits', list)
+}
+
+function enableAllFruits() {
+  emit('update:selectedFruits', fruitData.map(f => f.name))
+}
+
+function disableAllFruits() {
+  emit('update:selectedFruits', [])
+}
+
+const activeFruitAnalysis = computed(() => {
+  if (!props.selectedPoint) return null
+  const elevation = props.selectedPoint.elevation
+  const activeFruits = fruitData.filter(f => props.selectedFruits.includes(f.name))
+  
+  if (activeFruits.length === 0) {
+    return { goodCount: 0, kindaCount: 0, notCount: 0, score: 0, individualStatuses: [] }
+  }
+  
+  let goodCount = 0
+  let kindaCount = 0
+  let notCount = 0
+  const individualStatuses: { name: string; status: 'good' | 'kinda' | 'not' }[] = []
+  
+  for (const fruit of activeFruits) {
+    let status: 'good' | 'kinda' | 'not' = 'not'
+    if (elevation >= fruit.good.min && elevation <= fruit.good.max) {
+      goodCount++
+      status = 'good'
+    } else {
+      let isKinda = false
+      for (const range of fruit.kinda) {
+        if (elevation >= range.min && elevation <= range.max) {
+          isKinda = true
+          break
+        }
+      }
+      if (isKinda) {
+        kindaCount++
+        status = 'kinda'
+      } else {
+        notCount++
+        status = 'not'
+      }
+    }
+    individualStatuses.push({ name: fruit.name, status })
+  }
+  
+  const score = ((goodCount * 1.0 + kindaCount * 0.4) / activeFruits.length) * 100
+  
+  // Sort individual statuses: optimal first, then marginal, then unsuitable
+  individualStatuses.sort((a, b) => {
+    const weights = { good: 3, kinda: 2, not: 1 }
+    return weights[b.status] - weights[a.status]
+  })
+  
+  return { goodCount, kindaCount, notCount, score, individualStatuses }
+})
 
 // Dynamic suitabilities calculated from physical microclimate values
 const suitabilityScores = computed(() => {
@@ -221,6 +299,17 @@ const legendData = computed(() => {
           { color: '#ec4899', label: '>20' }
         ]
       }
+    case 'fruit_suitability':
+      return {
+        title: 'Selected Fruits Suitability Index',
+        stops: [
+          { color: '#881337', label: '0%-20%' },
+          { color: '#d97706', label: '20%-45%' },
+          { color: '#eab308', label: '45%-70%' },
+          { color: '#22c55e', label: '70%-90%' },
+          { color: '#059669', label: '>90%' }
+        ]
+      }
   }
 })
 
@@ -337,6 +426,63 @@ const legendBackground = computed(() => {
                 <p class="text-[11px] leading-relaxed text-slate-400/90 font-medium">
                   {{ item.description }}
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fruit Selector Panel (Visible only when Fruit Suitability is selected) -->
+        <div v-if="selectedOverlay === 'fruit_suitability'" class="flex flex-col space-y-3.5 bg-slate-900/20 p-5 rounded-2xl border border-slate-900/60">
+          <div class="flex justify-between items-center text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+            <span>Filter Active Fruits</span>
+            <span class="font-mono text-lime-400 font-extrabold text-[11px]">{{ selectedFruits.length }} / {{ fruitData.length }} Active</span>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="grid grid-cols-2 gap-2 text-[10px] font-bold">
+            <button 
+              @click="enableAllFruits" 
+              class="py-2 px-3 bg-slate-950 border border-slate-800 hover:border-slate-700 hover:bg-slate-900 text-slate-300 hover:text-white rounded-xl transition-all duration-200 cursor-pointer"
+            >
+              Select All
+            </button>
+            <button 
+              @click="disableAllFruits" 
+              class="py-2 px-3 bg-slate-950 border border-slate-800 hover:border-slate-700 hover:bg-slate-900 text-slate-300 hover:text-white rounded-xl transition-all duration-200 cursor-pointer"
+            >
+              Clear All
+            </button>
+          </div>
+
+          <!-- Search Input -->
+          <div class="relative">
+            <input 
+              v-model="fruitSearchQuery"
+              type="text" 
+              placeholder="Search fruits..."
+              class="w-full bg-slate-950 border border-slate-900 focus:border-slate-800 text-xs text-slate-200 placeholder-slate-600 px-3.5 py-2 rounded-xl outline-none transition-all"
+            />
+          </div>
+
+          <!-- Fruit List (Scrollable) -->
+          <div class="max-h-[220px] overflow-y-auto space-y-1.5 pr-1.5 custom-scrollbar text-xs font-semibold">
+            <div 
+              v-for="fruit in filteredFruits" 
+              :key="fruit.name"
+              @click="toggleFruit(fruit.name)"
+              class="flex items-center gap-3 p-2 rounded-xl bg-slate-950/40 hover:bg-slate-950/90 border border-transparent hover:border-slate-900 cursor-pointer select-none transition-all duration-150"
+            >
+              <input 
+                type="checkbox" 
+                :checked="selectedFruits.includes(fruit.name)"
+                @click.stop="toggleFruit(fruit.name)"
+                class="rounded border-slate-800 text-lime-500 bg-slate-950 focus:ring-0 cursor-pointer h-3.5 w-3.5 accent-lime-500"
+              />
+              <div class="flex-1 min-w-0 leading-tight">
+                <div class="flex items-center justify-between">
+                  <span class="truncate text-slate-200 font-bold group-hover:text-white text-[11px]">{{ fruit.name }}</span>
+                  <span class="text-[8px] bg-slate-900 border border-slate-800/80 px-1.5 py-0.5 rounded-md text-slate-500 scale-95 shrink-0">{{ fruit.category }}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -501,7 +647,7 @@ const legendBackground = computed(() => {
             </div>
 
             <!-- Activity Comfort Indexes -->
-            <div class="space-y-3.5 pt-3.5 border-t border-slate-900">
+            <div v-if="selectedOverlay !== 'fruit_suitability'" class="space-y-3.5 pt-3.5 border-t border-slate-900">
               <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
                 <TrendingUp class="w-3.5 h-3.5 text-indigo-400" />
                 <span>Microclimatic Suitability Scores</span>
@@ -565,6 +711,92 @@ const legendBackground = computed(() => {
                       :class="getBarColorClass(suitabilityScores.surf)"
                       :style="{ width: `${suitabilityScores.surf}%` }"
                     ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Active Fruit Suitability Breakdown Scorecard -->
+            <div v-if="selectedOverlay === 'fruit_suitability'" class="space-y-4 pt-3.5 border-t border-slate-900">
+              <h5 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <Sprout class="w-3.5 h-3.5 text-lime-400" />
+                <span>Agricultural Suitability Summary</span>
+              </h5>
+
+              <div class="space-y-3.5" v-if="activeFruitAnalysis">
+                <!-- Share Score Bar -->
+                <div class="space-y-1.5">
+                  <div class="flex justify-between items-center text-[11px] font-bold">
+                    <span class="text-lime-300">📈 Selected Fruits Suitability Index</span>
+                    <div class="flex items-center gap-2 text-[9px]">
+                      <span class="font-extrabold font-mono text-slate-100">{{ Math.round(activeFruitAnalysis.score) }}%</span>
+                      <span class="text-[9.5px] border font-bold px-1.5 py-0.5 rounded uppercase tracking-wider scale-95" :class="getScoreColor(activeFruitAnalysis.score)">
+                        {{ getScoreLabel(activeFruitAnalysis.score) }}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="w-full h-1 bg-slate-950 rounded-full overflow-hidden">
+                    <div 
+                      class="h-full rounded-full transition-all duration-500 shadow-sm" 
+                      :class="getBarColorClass(activeFruitAnalysis.score)"
+                      :style="{ width: `${activeFruitAnalysis.score}%` }"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Numerical Shares Breakdown Grid -->
+                <div class="grid grid-cols-3 gap-1.5 text-center text-[10px] font-bold">
+                  <div class="p-2 bg-emerald-950/20 border border-emerald-900/10 rounded-xl">
+                    <div class="text-[14px] font-black font-mono text-emerald-400 leading-none mb-1">
+                      {{ activeFruitAnalysis.goodCount }}
+                    </div>
+                    <div class="text-[8px] text-slate-500 uppercase tracking-wider">Good (Thrives)</div>
+                  </div>
+                  <div class="p-2 bg-amber-950/20 border border-amber-900/10 rounded-xl">
+                    <div class="text-[14px] font-black font-mono text-amber-400 leading-none mb-1">
+                      {{ activeFruitAnalysis.kindaCount }}
+                    </div>
+                    <div class="text-[8px] text-slate-500 uppercase tracking-wider">Kinda (Marginal)</div>
+                  </div>
+                  <div class="p-2 bg-rose-950/20 border border-rose-900/10 rounded-xl">
+                    <div class="text-[14px] font-black font-mono text-rose-400 leading-none mb-1">
+                      {{ activeFruitAnalysis.notCount }}
+                    </div>
+                    <div class="text-[8px] text-slate-500 uppercase tracking-wider">Not (Poor)</div>
+                  </div>
+                </div>
+
+                <!-- Quick list of individual fruit statuses -->
+                <div class="space-y-1.5">
+                  <div class="text-[9px] font-bold text-slate-500 uppercase tracking-wider">Horticultural Standings</div>
+                  <div class="max-h-[140px] overflow-y-auto space-y-1 pr-1 custom-scrollbar text-[10px]">
+                    <div 
+                      v-for="item in activeFruitAnalysis.individualStatuses" 
+                      :key="item.name"
+                      class="flex justify-between items-center p-1.5 bg-slate-950/30 rounded-lg border border-slate-900/40"
+                    >
+                      <span class="font-bold text-slate-300 truncate max-w-[140px]">{{ item.name }}</span>
+                      <div class="flex items-center gap-1 shrink-0 font-mono text-[9px] font-black">
+                        <span 
+                          v-if="item.status === 'good'" 
+                          class="px-1.5 py-0.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded font-bold"
+                        >
+                          🟢 Optimal
+                        </span>
+                        <span 
+                          v-else-if="item.status === 'kinda'" 
+                          class="px-1.5 py-0.5 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded font-bold"
+                        >
+                          🟡 Marginal
+                        </span>
+                        <span 
+                          v-else 
+                          class="px-1.5 py-0.5 bg-rose-500/10 text-rose-400 border border-rose-500/20 rounded font-bold"
+                        >
+                          🔴 Unsuitable
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -634,34 +866,38 @@ const legendBackground = computed(() => {
               <span class="text-slate-300">Bali Island Box</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-500">Grid Resolution:</span>
-              <span class="text-slate-300">0.05° x 0.05°</span>
+              <span class="text-slate-500">Coarse Weather Grid:</span>
+              <span class="text-slate-300">0.05° Grid (194 Stations)</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Dense Elevation Grid:</span>
+              <span class="text-emerald-400">0.01° Grid (5,906 Nodes)</span>
             </div>
             <div class="flex justify-between border-b border-slate-900 pb-2 mb-2">
-              <span class="text-slate-500">Grid Stations:</span>
-              <span class="text-emerald-400">194 Land Nodes</span>
+              <span class="text-slate-500">Resolution Mode:</span>
+              <span class="text-indigo-400 font-bold">Continuous Raster Downscaling</span>
             </div>
             <div class="flex flex-col space-y-1.5">
-              <span class="text-slate-500">Calculated Raster Spacing:</span>
+              <span class="text-slate-500">Calculated Downscaled Spacing:</span>
               <div class="text-[10px] text-indigo-400 space-y-1 pl-2">
                 <div class="flex items-center gap-1.5">
                   <ArrowRight class="w-3 h-3" />
-                  <span>Lat Spacing (N-S): ~5,556 meters</span>
+                  <span>Lat Spacing (N-S): ~1,111 meters (1.11 km)</span>
                 </div>
                 <div class="flex items-center gap-1.5">
                   <ArrowRight class="w-3 h-3" />
-                  <span>Lon Spacing (E-W): ~5,495 meters</span>
+                  <span>Lon Spacing (E-W): ~1,099 meters (1.10 km)</span>
                 </div>
                 <div class="flex items-center gap-1.5 text-slate-500">
                   <ArrowRight class="w-3 h-3" />
-                  <span>Area per cell: ~30.5 km²</span>
+                  <span>Area per raster cell: ~1.22 km²</span>
                 </div>
               </div>
             </div>
           </div>
 
           <p class="text-slate-500 text-[11px] leading-relaxed">
-            The 194 grid stations have been calibrated using high-density geographical grids to bypass coarse oceanic models, reflecting the true topography and coastline of Bali.
+            The 194 baseline weather stations are downscaled continuously using a hyper-detailed 1.1 km Digital Elevation Model (DEM) of 5,906 land nodes, reflecting the true mountainous topography, calderas, and microclimates of Bali.
           </p>
         </div>
 

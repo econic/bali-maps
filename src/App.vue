@@ -10,6 +10,8 @@ import fruitData from './data/bali-fruit-data.json'
 const selectedOverlay = ref<'rain_prop' | 'annual_rainfall' | 'avg_temp' | 'sun_hours' | 'wind_speed' | 'fruit_suitability'>('rain_prop')
 const selectedFruits = ref<string[]>(fruitData.map(f => f.name))
 const overlayOpacity = ref<number>(0.25)
+const elevationRange = ref<[number, number]>([0, 3100])
+const outOfRangeMode = ref<'hide' | 'dim' | 'mask'>('hide')
 const selectedPoint = ref<ClimateMetrics | null>(null)
 const sidebarOpen = ref<boolean>(true)
 
@@ -32,6 +34,8 @@ function handleBaseMapChange(style: 'dark' | 'satellite' | 'terrain') {
       :selectedOverlay="selectedOverlay"
       :selectedFruits="selectedFruits"
       :opacity="overlayOpacity"
+      :elevationRange="elevationRange"
+      :outOfRangeMode="outOfRangeMode"
       v-model:selectedPoint="selectedPoint"
       class="absolute inset-0 w-full h-full"
     />
@@ -41,6 +45,8 @@ function handleBaseMapChange(style: 'dark' | 'satellite' | 'terrain') {
       v-model:selectedOverlay="selectedOverlay"
       v-model:selectedFruits="selectedFruits"
       v-model:opacity="overlayOpacity"
+      v-model:elevationRange="elevationRange"
+      v-model:outOfRangeMode="outOfRangeMode"
       v-model:sidebarOpen="sidebarOpen"
       :selectedPoint="selectedPoint"
       @changeBaseMap="handleBaseMapChange"

@@ -16,6 +16,8 @@ const props = defineProps<{
   selectedFruits: string[]
   opacity: number
   selectedPoint: ClimateMetrics | null
+  elevationRange: [number, number]
+  outOfRangeMode: 'hide' | 'dim' | 'mask'
 }>()
 
 // Component emits
@@ -186,6 +188,24 @@ function initRasterLayer() {
             color = getColorForMetric(overlay, val)
           }
 
+          // Check if coordinate elevation falls within active elevation range filter
+          const inRange = metrics.elevation >= props.elevationRange[0] && metrics.elevation <= props.elevationRange[1]
+          if (!inRange) {
+            if (props.outOfRangeMode === 'hide') {
+              continue
+            } else if (props.outOfRangeMode === 'dim') {
+              ctx.fillStyle = color
+              ctx.globalAlpha = 0.15
+              ctx.fillRect(px, py, blockSize + overlap, blockSize + overlap)
+              ctx.globalAlpha = 1.0
+              continue
+            } else if (props.outOfRangeMode === 'mask') {
+              ctx.fillStyle = '#020617'
+              ctx.fillRect(px, py, blockSize + overlap, blockSize + overlap)
+              continue
+            }
+          }
+
           // Draw the dense colored block
           ctx.fillStyle = color
           ctx.fillRect(px, py, blockSize + overlap, blockSize + overlap)
@@ -213,6 +233,12 @@ function selectPoint(item: ClimateMetrics, openPopup = true, eLatLng?: L.LatLng)
 
   if (openPopup && map) {
     const overlayName = getOverlayLabel(props.selectedOverlay)
+    const inRange = item.elevation >= props.elevationRange[0] && item.elevation <= props.elevationRange[1]
+    const elevationTag = !inRange 
+      ? `<div class="mt-2 text-[10px] text-amber-300 bg-amber-500/20 border border-amber-500/30 px-2 py-0.5 rounded font-mono text-center font-bold">Outside Range (${props.elevationRange[0]}–${props.elevationRange[1]}m)</div>`
+      : (props.elevationRange[0] > 0 || props.elevationRange[1] < 3100 
+          ? `<div class="mt-2 text-[10px] text-emerald-300 bg-emerald-500/20 border border-emerald-500/30 px-2 py-0.5 rounded font-mono text-center font-bold">In Active Elevation Range</div>` 
+          : '')
     let popupContent = ''
     
     if (props.selectedOverlay === 'fruit_suitability') {
@@ -232,6 +258,7 @@ function selectPoint(item: ClimateMetrics, openPopup = true, eLatLng?: L.LatLng)
               <span class="text-lime-300 font-extrabold">${Math.round(score)}%</span>
             </div>
           </div>
+          ${elevationTag}
         </div>
       `
     } else {
@@ -251,6 +278,7 @@ function selectPoint(item: ClimateMetrics, openPopup = true, eLatLng?: L.LatLng)
               <span class="font-bold text-blue-300">${overlayVal}${unit}</span>
             </div>
           </div>
+          ${elevationTag}
         </div>
       `
     }
@@ -416,6 +444,17 @@ onBeforeUnmount(() => {
   }
 })
 
+let redrawFrameId: number | null = null
+
+function triggerRedraw() {
+  if (!rasterLayer) return
+  if (redrawFrameId !== null) cancelAnimationFrame(redrawFrameId)
+  redrawFrameId = requestAnimationFrame(() => {
+    rasterLayer?.redraw()
+    redrawFrameId = null
+  })
+}
+
 // Watches to trigger canvas redraws on prop modifications
 watch(() => props.selectedOverlay, () => {
   initRasterLayer()
@@ -424,13 +463,23 @@ watch(() => props.selectedOverlay, () => {
   }
 })
 
-watch(() => props.opacity, () => {
-  initRasterLayer()
+watch(() => props.opacity, (newOpacity) => {
+  if (rasterLayer) {
+    rasterLayer.setOpacity(props.selectedOverlay === 'fruit_suitability' ? newOpacity * 1.15 : newOpacity)
+  }
+})
+
+watch(() => props.elevationRange, () => {
+  triggerRedraw()
+}, { deep: true })
+
+watch(() => props.outOfRangeMode, () => {
+  triggerRedraw()
 })
 
 watch(() => props.selectedFruits, () => {
   if (props.selectedOverlay === 'fruit_suitability') {
-    initRasterLayer()
+    triggerRedraw()
     if (props.selectedPoint) {
       selectPoint(props.selectedPoint, false)
     }
@@ -454,15 +503,34 @@ defineExpose({
       class="absolute z-[500] pointer-events-none bg-slate-950/90 backdrop-blur border border-slate-800/80 rounded-xl p-3 shadow-2xl flex flex-col space-y-1.5 min-w-[170px] select-none"
       :style="{ left: `${tooltipX}px`, top: `${tooltipY}px` }"
     >
-      <div class="text-[9px] font-bold text-slate-500 uppercase tracking-wider font-mono leading-none">
-        Cursor Tracking
+      <div class="flex justify-between items-center text-[9px] font-bold uppercase tracking-wider font-mono leading-none pb-0.5">
+        <span class="text-slate-500">Cursor Tracking</span>
+        <span 
+          v-if="hoveredMetrics.elevation < elevationRange[0] || hoveredMetrics.elevation > elevationRange[1]"
+          class="text-amber-400 text-[8px] bg-amber-500/10 border border-amber-500/30 px-1 py-0.5 rounded font-sans uppercase font-bold"
+        >
+          Filtered
+        </span>
+        <span 
+          v-else
+          class="text-emerald-400 text-[8px] bg-emerald-500/10 border border-emerald-500/30 px-1 py-0.5 rounded font-sans uppercase font-bold"
+        >
+          In Range
+        </span>
       </div>
       <div class="flex justify-between items-center text-[11px] font-bold border-b border-slate-900 pb-1.5 mb-1 select-none">
         <span class="text-slate-400">Elevation:</span>
         <span class="text-indigo-400 font-mono font-extrabold leading-none">{{ hoveredMetrics.elevation }}m</span>
       </div>
       
-      <div class="flex justify-between items-center text-[11px] font-bold select-none">
+      <div 
+        class="flex justify-between items-center text-[11px] font-bold select-none transition-opacity"
+        :class="[
+          hoveredMetrics.elevation < elevationRange[0] || hoveredMetrics.elevation > elevationRange[1]
+            ? 'opacity-40'
+            : 'opacity-100'
+        ]"
+      >
         <span class="text-slate-400 font-semibold">{{ getOverlayLabel(selectedOverlay) }}:</span>
         <span class="font-mono font-extrabold leading-none" :style="{ color: getTooltipColor(selectedOverlay, hoveredMetrics) }">
           {{ getTooltipValue(selectedOverlay, hoveredMetrics) }}
@@ -475,6 +543,12 @@ defineExpose({
       <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
       <span class="text-gray-300 font-medium capitalize">
         Overlay: {{ selectedOverlay.replace('_', ' ') }}
+      </span>
+      <span 
+        v-if="elevationRange[0] > 0 || elevationRange[1] < 3100"
+        class="text-[10px] font-mono text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-1.5 py-0.5 rounded font-bold"
+      >
+        {{ elevationRange[0] }}–{{ elevationRange[1] }}m ({{ outOfRangeMode }})
       </span>
     </div>
   </div>

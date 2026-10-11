@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onBeforeUnmount } from 'vue'
 import { 
   CloudRain, 
   Droplets, 
@@ -11,15 +11,18 @@ import {
   Navigation, 
   Info, 
   Activity, 
-  HelpCircle,
-  X,
-  TrendingUp,
-  Compass,
-  ArrowRight,
-  Sprout
+  HelpCircle, 
+  X, 
+  TrendingUp, 
+  Compass, 
+  ArrowRight, 
+  Sprout,
+  Mountain,
+  RotateCcw
 } from '@lucide/vue'
 import type { ClimateMetrics } from '../utils/climateSynthesis'
 import fruitData from '../data/bali-fruit-data.json'
+import elevationData from '../data/bali-elevation-grid.json'
 
 // Props
 const props = defineProps<{
@@ -28,6 +31,8 @@ const props = defineProps<{
   opacity: number
   selectedPoint: ClimateMetrics | null
   sidebarOpen: boolean
+  elevationRange: [number, number]
+  outOfRangeMode: 'hide' | 'dim' | 'mask'
 }>()
 
 // Emits
@@ -36,6 +41,8 @@ const emit = defineEmits<{
   (e: 'update:selectedFruits', fruits: string[]): void
   (e: 'update:opacity', val: number): void
   (e: 'update:sidebarOpen', val: boolean): void
+  (e: 'update:elevationRange', range: [number, number]): void
+  (e: 'update:outOfRangeMode', mode: 'hide' | 'dim' | 'mask'): void
   (e: 'changeBaseMap', style: 'dark' | 'satellite' | 'terrain'): void
 }>()
 
@@ -319,6 +326,98 @@ const legendBackground = computed(() => {
   const colors = legendData.value.stops.map(s => s.color).join(', ')
   return `linear-gradient(to right, ${colors})`
 })
+
+// Quick altitude presets for Bali geographic zones
+const elevationPresets = [
+  { label: 'All Bali', range: [0, 3100] as [number, number] },
+  { label: 'Coasts (0-200m)', range: [0, 200] as [number, number] },
+  { label: 'Foothills (200-700m)', range: [200, 700] as [number, number] },
+  { label: 'Highlands (700-1500m)', range: [700, 1500] as [number, number] },
+  { label: 'Summits (>1500m)', range: [1500, 3100] as [number, number] }
+]
+
+// Local responsive state decoupled from map rendering
+const localElevationRange = ref<[number, number]>([...props.elevationRange])
+
+watch(() => props.elevationRange, (newRange) => {
+  if (newRange[0] !== localElevationRange.value[0] || newRange[1] !== localElevationRange.value[1]) {
+    localElevationRange.value = [...newRange]
+  }
+}, { deep: true })
+
+let debounceTimer: ReturnType<typeof setTimeout> | null = null
+
+function applyElevationRange(newRange: [number, number], immediate = false) {
+  localElevationRange.value = newRange
+  if (debounceTimer) {
+    clearTimeout(debounceTimer)
+    debounceTimer = null
+  }
+  if (immediate) {
+    emit('update:elevationRange', newRange)
+  } else {
+    // 250ms debounce ensures buttery smooth slider drag while throttling map tile re-rendering
+    debounceTimer = setTimeout(() => {
+      emit('update:elevationRange', newRange)
+      debounceTimer = null
+    }, 250)
+  }
+}
+
+onBeforeUnmount(() => {
+  if (debounceTimer) clearTimeout(debounceTimer)
+})
+
+// Real-time calculation of Bali landmass percentage in range
+const coveragePercentage = computed(() => {
+  const [min, max] = localElevationRange.value
+  if (min <= 0 && max >= 3100) return 100
+  let count = 0
+  for (const p of elevationData) {
+    if (p.elev >= min && p.elev <= max) {
+      count++
+    }
+  }
+  return Math.round((count / elevationData.length) * 1000) / 10
+})
+
+function onMinSliderChange(e: Event) {
+  const raw = Number((e.target as HTMLInputElement).value)
+  const val = Math.min(raw, localElevationRange.value[1])
+  applyElevationRange([val, localElevationRange.value[1]], false)
+}
+
+function onMaxSliderChange(e: Event) {
+  const raw = Number((e.target as HTMLInputElement).value)
+  const val = Math.max(raw, localElevationRange.value[0])
+  applyElevationRange([localElevationRange.value[0], val], false)
+}
+
+function onSliderCommit() {
+  applyElevationRange(localElevationRange.value, true)
+}
+
+function handleMinInput(e: Event) {
+  let val = parseInt((e.target as HTMLInputElement).value, 10)
+  if (isNaN(val)) val = 0
+  val = Math.max(0, Math.min(val, localElevationRange.value[1]))
+  applyElevationRange([val, localElevationRange.value[1]], true)
+}
+
+function handleMaxInput(e: Event) {
+  let val = parseInt((e.target as HTMLInputElement).value, 10)
+  if (isNaN(val)) val = 3100
+  val = Math.min(3100, Math.max(val, localElevationRange.value[0]))
+  applyElevationRange([localElevationRange.value[0], val], true)
+}
+
+function selectPreset(range: [number, number]) {
+  applyElevationRange([...range], true)
+}
+
+function resetElevationRange() {
+  applyElevationRange([0, 3100], true)
+}
 </script>
 
 <template>
@@ -488,6 +587,177 @@ const legendBackground = computed(() => {
           </div>
         </div>
 
+        <!-- Elevation Range Filter -->
+        <div class="flex flex-col space-y-4 bg-slate-900/20 p-5 rounded-2xl border border-slate-900/60 select-none">
+          <div class="flex justify-between items-center text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+            <div class="flex items-center gap-2">
+              <Mountain class="w-3.5 h-3.5 text-indigo-400" />
+              <span>Elevation Range Filter</span>
+            </div>
+            <button
+              v-if="localElevationRange[0] > 0 || localElevationRange[1] < 3100"
+              @click="resetElevationRange"
+              class="flex items-center gap-1 text-[9px] text-indigo-400 hover:text-indigo-300 bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 px-2 py-0.5 rounded-md transition-all cursor-pointer font-bold"
+              title="Reset to 0–3100m"
+            >
+              <RotateCcw class="w-2.5 h-2.5" />
+              <span>Reset</span>
+            </button>
+          </div>
+
+          <!-- Dual Bound Range Values Display & Numeric Direct Input -->
+          <div class="flex items-center justify-between gap-2.5">
+            <div class="flex-1 bg-slate-950/80 border border-slate-800/80 rounded-xl p-2.5 flex items-center justify-between">
+              <span class="text-[9px] text-slate-500 uppercase font-bold tracking-wider">Lower</span>
+              <div class="flex items-center gap-1">
+                <input 
+                  type="number" 
+                  :value="localElevationRange[0]" 
+                  @input="handleMinInput" 
+                  min="0" 
+                  :max="localElevationRange[1]" 
+                  step="25"
+                  class="w-14 bg-transparent text-right font-mono font-black text-indigo-300 text-xs focus:outline-none"
+                />
+                <span class="text-[10px] text-slate-500 font-mono">m</span>
+              </div>
+            </div>
+
+            <span class="text-slate-600 font-bold text-xs">—</span>
+
+            <div class="flex-1 bg-slate-950/80 border border-slate-800/80 rounded-xl p-2.5 flex items-center justify-between">
+              <span class="text-[9px] text-slate-500 uppercase font-bold tracking-wider">Upper</span>
+              <div class="flex items-center gap-1">
+                <input 
+                  type="number" 
+                  :value="localElevationRange[1]" 
+                  @input="handleMaxInput" 
+                  :min="localElevationRange[0]" 
+                  max="3100" 
+                  step="25"
+                  class="w-14 bg-transparent text-right font-mono font-black text-indigo-300 text-xs focus:outline-none"
+                />
+                <span class="text-[10px] text-slate-500 font-mono">m</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dual-Handle Range Slider -->
+          <div class="space-y-1">
+            <div class="relative w-full h-6 flex items-center">
+              <!-- Background Bar -->
+              <div class="absolute w-full h-1.5 bg-slate-800 rounded-lg"></div>
+
+              <!-- Active Highlight Range Bar -->
+              <div 
+                class="absolute h-1.5 bg-gradient-to-r from-indigo-500 to-indigo-400 rounded-lg shadow-sm shadow-indigo-500/50"
+                :style="{
+                  left: `${(localElevationRange[0] / 3100) * 100}%`,
+                  width: `${((localElevationRange[1] - localElevationRange[0]) / 3100) * 100}%`
+                }"
+              ></div>
+
+              <!-- Min slider -->
+              <input 
+                type="range" 
+                min="0" 
+                max="3100" 
+                step="25"
+                :value="localElevationRange[0]" 
+                @input="onMinSliderChange"
+                @change="onSliderCommit"
+                class="dual-range-thumb pointer-events-none absolute w-full h-1.5 bg-transparent"
+                :style="{ zIndex: localElevationRange[0] > 2800 ? 5 : 3 }"
+              />
+
+              <!-- Max slider -->
+              <input 
+                type="range" 
+                min="0" 
+                max="3100" 
+                step="25"
+                :value="localElevationRange[1]" 
+                @input="onMaxSliderChange"
+                @change="onSliderCommit"
+                class="dual-range-thumb pointer-events-none absolute w-full h-1.5 bg-transparent"
+                :style="{ zIndex: 4 }"
+              />
+            </div>
+
+            <!-- Tick labels -->
+            <div class="flex justify-between text-[8px] font-mono font-bold text-slate-500 px-0.5">
+              <span>0m</span>
+              <span>1000m</span>
+              <span>2000m</span>
+              <span>3100m</span>
+            </div>
+          </div>
+
+          <!-- Island Coverage Metric Bar -->
+          <div class="flex items-center justify-between text-[10px] bg-slate-950/60 border border-slate-900/80 px-3 py-2 rounded-xl font-medium">
+            <span class="text-slate-400">Bali Landmass in Range:</span>
+            <div class="flex items-center gap-1.5">
+              <span class="font-mono font-black text-indigo-400">{{ coveragePercentage }}%</span>
+              <span class="text-slate-600 text-[9px]">(DEM Grid)</span>
+            </div>
+          </div>
+
+          <!-- Out-of-Range Visual Style Selector -->
+          <div class="space-y-1.5 pt-0.5">
+            <div class="flex items-center justify-between text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+              <span>Outside Range Style</span>
+              <span class="text-indigo-400 font-mono text-[9px] capitalize">{{ outOfRangeMode }} Mode</span>
+            </div>
+            <div class="grid grid-cols-3 gap-1 bg-slate-950 p-1 rounded-xl text-[10px] font-bold border border-slate-900">
+              <button
+                type="button"
+                @click="emit('update:outOfRangeMode', 'hide')"
+                class="py-1.5 px-2 rounded-lg transition-all duration-200 uppercase tracking-wider text-center cursor-pointer"
+                :class="[outOfRangeMode === 'hide' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'text-slate-400 hover:text-slate-200']"
+              >
+                Hide
+              </button>
+              <button
+                type="button"
+                @click="emit('update:outOfRangeMode', 'dim')"
+                class="py-1.5 px-2 rounded-lg transition-all duration-200 uppercase tracking-wider text-center cursor-pointer"
+                :class="[outOfRangeMode === 'dim' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'text-slate-400 hover:text-slate-200']"
+              >
+                Dim
+              </button>
+              <button
+                type="button"
+                @click="emit('update:outOfRangeMode', 'mask')"
+                class="py-1.5 px-2 rounded-lg transition-all duration-200 uppercase tracking-wider text-center cursor-pointer"
+                :class="[outOfRangeMode === 'mask' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30' : 'text-slate-400 hover:text-slate-200']"
+              >
+                Mask
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Elevation Zone Presets -->
+          <div class="space-y-1.5 pt-0.5">
+            <div class="text-[9px] font-bold text-slate-500 uppercase tracking-wider">Altitude Presets</div>
+            <div class="flex flex-wrap gap-1.5">
+              <button
+                v-for="preset in elevationPresets"
+                :key="preset.label"
+                type="button"
+                @click="selectPreset(preset.range)"
+                class="text-[9.5px] px-2.5 py-1 rounded-lg border font-semibold transition-all duration-150 cursor-pointer"
+                :class="[
+                  localElevationRange[0] === preset.range[0] && localElevationRange[1] === preset.range[1]
+                    ? 'bg-indigo-500/20 border-indigo-500/40 text-indigo-300 font-bold'
+                    : 'bg-slate-950/40 border-slate-900 text-slate-400 hover:text-slate-200 hover:border-slate-800'
+                ]"
+              >
+                {{ preset.label }}
+              </button>
+            </div>
+          </div>
+        </div>
+
         <!-- Opacity Slider -->
         <div class="flex flex-col space-y-3.5 bg-slate-900/20 p-5 rounded-2xl border border-slate-900/60">
           <div class="flex justify-between items-center text-[10px] font-bold text-slate-500 uppercase tracking-wider">
@@ -602,8 +872,17 @@ const legendBackground = computed(() => {
                   <span>{{ selectedPoint.lat.toFixed(3) }}°S , {{ selectedPoint.lon.toFixed(3) }}°E</span>
                 </p>
               </div>
-              <div class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-[10px] font-extrabold px-3 py-1 rounded-xl uppercase tracking-wider">
-                Alt: {{ selectedPoint.elevation }}m
+              <div class="flex items-center gap-1.5">
+                <div class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-[10px] font-extrabold px-3 py-1 rounded-xl uppercase tracking-wider">
+                  Alt: {{ selectedPoint.elevation }}m
+                </div>
+                <div 
+                  v-if="selectedPoint.elevation < elevationRange[0] || selectedPoint.elevation > elevationRange[1]"
+                  class="bg-amber-500/10 text-amber-300 border border-amber-500/30 text-[9px] font-extrabold px-2 py-1 rounded-xl uppercase tracking-wider"
+                  title="Outside Active Elevation Range"
+                >
+                  Filtered
+                </div>
               </div>
             </div>
 
